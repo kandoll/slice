@@ -1,0 +1,14 @@
+@import "normalize.css";
+@import "base/_global";
+@import "modules/_featured";
+
+
+$mainBlue:#2f5572;
+
+.site-header {
+padding: 24px;
+position: absolute;
+    z-index: 2;
+    width: 100%;
+}
+

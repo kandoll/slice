@@ -1,0 +1,26 @@
+.featured{
+    position: relative;
+
+    &__text-content{
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        left: 0%;
+        width: 100%;
+        text-align: center;
+    
+    }
+    
+    &__title{
+        font-weight: 300px;
+        font-size: 4.8rem;
+    }
+    
+    
+    &__subtitle {
+        font-weight: 300;
+        color: red;
+        font-size: 1.5rem;
+    }
+}
+

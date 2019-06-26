@@ -1,0 +1,30 @@
+.pricing{
+    font-size: 2rem;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+    ;
+  
+    
+    &__heading{
+        font-size:40px;
+        color:white;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+  /* Create two equal columns that floats next to each other */
+&__column {
+  float: left;
+  width: 50%;
+  padding: 10px;
+}
+
+/* Clear floats after the columns */
+&__row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+   
+}

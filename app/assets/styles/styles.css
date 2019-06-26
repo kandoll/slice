@@ -1,9 +1,18 @@
 @import "normalize.css";
 @import "base/_global";
+@import "base/_variables";
+@import "base/_mixins";
 @import "modules/_featured";
+@import "modules/_btn";
+@import "modules/_wrapper.css";
+@import "modules/_page-section.css";
+@import "modules/_headline.css";
+@import "modules/_about.css";
+@import "modules/_glimpse.css";
+@import "modules/_pricing.css";
+@import "modules/_speedDrawing.css";
+@import "modules/_rowcol.css";
 
-
-$mainBlue:#2f5572;
 
 .site-header {
 padding: 24px;

@@ -1,0 +1,10 @@
+.rowcol{
+    &__61{
+        float: left;
+        width:50%
+    }
+    &__62{
+        float: left;
+        width:50%
+    }
+}

@@ -8,11 +8,13 @@
 @import "modules/_page-section.css";
 @import "modules/_headline.css";
 @import "modules/_about.css";
-@import "modules/_glimpse.css";
 @import "modules/_pricing.css";
 @import "modules/_speedDrawing.css";
 @import "modules/_rowcol.css";
+@import "modules/_footer.css";
 
+@import "modules/_gallery.css";
+@import "modules/_slideshow.css";
 
 .site-header {
 padding: 24px;

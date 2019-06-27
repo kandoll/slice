@@ -1,0 +1,6 @@
+.footer{
+    box-shadow: 1px 1px 20px 8px $mainPurple;
+    padding:0.5rem 0;
+    text-align: center;
+
+}

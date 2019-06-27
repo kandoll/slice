@@ -1,12 +1,25 @@
 .pricing{
-    font-size: 2rem;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
     ;
+
   
+    &__p{
+      font-size: 1rem;
+  
+      @mixin atMedium{
+          font-size: 1.8rem;
+  
+      }
+  }
     
     &__heading{
-        font-size:40px;
+        font-size:1.5rem;
         color:white;
+
+        @mixin atMedium{
+          font-size:2rem;
+
+        }
     }
 
     * {
@@ -24,6 +37,7 @@
   content: "";
   display: table;
   clear: both;
+  text-align: center;
 }
 
 
@@ -31,3 +45,4 @@
   font-size: 1.5rem;
 }
 }
+

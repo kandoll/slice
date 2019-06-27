@@ -8,7 +8,6 @@
 
     &--orange{
       background-color: $mainOrange;  
-      margin-top: 30rem;
     }
 
     &--large{

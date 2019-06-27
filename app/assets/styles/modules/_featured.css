@@ -1,5 +1,6 @@
 .featured{
     position: relative;
+    box-shadow: 1px 1px 20px 8px $mainPurple;
 
     &__image{
             display: block;

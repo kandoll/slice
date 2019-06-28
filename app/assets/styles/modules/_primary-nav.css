@@ -1,6 +1,17 @@
 .primary-nav{
+
+    padding-top: 10px;
+
+    @mixin atMedium{
+        padding-top: 0;
+
+    }
     &--pull-right{
-        float:right;
+
+        @mixin atMedium{
+            float:right;
+
+        }
     }
 
     ul{
@@ -12,7 +23,11 @@
     li{
         list-style: none;  
         padding-right: 20px;
-        float: left;
+        display: inline-block;
+        @mixin atMedium{
+            float: left;
+            display: block;
+        }
     
     }
 
@@ -20,6 +35,19 @@
         color: white;
         text-decoration: none;
         display: block;
-        padding: 12px ;
+        padding: 5px 8px ;
+        font-size: 0.8rem;
+        background-color: black;
+        box-shadow: 0px 0px 20px 7px $mainPurple; 
+
+
+        @mixin atMedium{
+            padding: 12px 0 ;
+            font-size:1rem;
+            background-color:transparent;
+            box-shadow:none; 
+
+
+        }
     }
 }

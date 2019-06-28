@@ -731,22 +731,32 @@ font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 .site-header {
     position: absolute;
     padding: 10px;
-        z-index: 2;
-        width: 100%;
+    z-index: 2;
+    width: 100%;
+    }
+
+.site-header--is-expanded{
+        background-color: rgba(#DA33FF, 0.55);
     }
 
 @media(min-width: 800px){
 
 .site-header {
             background-color: black;
+            position: fixed;
         -webkit-box-shadow: 1px 1px 20px 8px #DA33FF;
                 box-shadow: 1px 1px 20px 8px #DA33FF
     }
     }
 
+@media(min-width: 800px){
+
 .site-header__btn-container{
-            float:right;
+                float:right
+
+
         }
+    }
 
 .site-header__logo{
             position:absolute;
@@ -775,30 +785,70 @@ font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             position:absolute;
             top: 10px;
             right: 10px;
-            background-color: black;
             -webkit-box-shadow: 1px 1px 20px 8px #DA33FF;
                     box-shadow: 1px 1px 20px 8px #DA33FF;
-
+   
         }
+
+.site-header__menu-icon__top{
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 20px;
+                height: 3px;
+                background-color: black;
+                -webkit-transform-origin: 0 0;
+                        transform-origin: 0 0;
+            }
+
+.site-header__menu-icon__middle{
+                position: absolute;
+                top: 8px;
+                left: 0;
+                width: 20px;
+                height: 3px;
+                background-color: black;
+            }
+
+.site-header__menu-icon__bottom{
+                position: absolute;
+                top: 16px;
+                left: 0;
+                width: 20px;
+                height: 3px;
+                background-color: black;
+            }
 
 @media(min-width: 800px){
 
 .site-header__menu-icon{
                 display: none
-
+   
         }
     }
 
+.site-header__menu-icon--close-x__top{
+                -webkit-transform: rotate(45deg);
+                        transform: rotate(45deg);
+            }
+
 .site-header__menu-content{
             display: none;
+            padding-top: 100px;
+            text-align: center;
         }
 
 @media(min-width: 800px){
 
 .site-header__menu-content{
-                display: block
+                display: block;
+                padding-top: 0px
         }
     }
+
+.site-header__menu-content--is-visible{
+                display:block;
+            }
 
 * {-webkit-box-sizing: border-box;box-sizing: border-box;}
 
@@ -935,8 +985,23 @@ body {font-family: Verdana, sans-serif; margin:0}
   .prev, .next,.text {font-size: 11px}
 }
 
+.primary-nav{
+
+    padding-top: 10px;
+}
+
+@media(min-width: 800px){
+
+.primary-nav{
+        padding-top: 0
+}
+    }
+
+@media(min-width: 800px){
+
 .primary-nav--pull-right{
-        float:right;
+            float:right
+    }
     }
 
 .primary-nav ul{
@@ -948,15 +1013,60 @@ body {font-family: Verdana, sans-serif; margin:0}
 .primary-nav li{
         list-style: none;  
         padding-right: 20px;
-        float: left;
+        display: inline-block;
     
+    }
+
+@media(min-width: 800px){
+
+.primary-nav li{
+            float: left;
+            display: block
+    
+    }
     }
 
 .primary-nav a{
         color: white;
         text-decoration: none;
         display: block;
-        padding: 12px ;
+        padding: 5px 8px ;
+        font-size: 0.8rem;
+        background-color: black;
+        -webkit-box-shadow: 0px 0px 20px 7px #DA33FF;
+                box-shadow: 0px 0px 20px 7px #DA33FF;
     }
 
+@media(min-width: 800px){
 
+.primary-nav a{
+            padding: 12px 0 ;
+            font-size:1rem;
+            background-color:transparent;
+            -webkit-box-shadow:none;
+                    box-shadow:none
+    }
+    }
+
+.gallery{
+    max-width: 1200px;
+    margin: auto;
+    overflow: auto;
+}
+
+.grid-box{
+    margin: 5px;
+    border: 1px solid #DA33FF;
+    float: left;
+    width: 390px;
+}
+
+.gallery img{
+    width: 100%;
+    height: auto;
+    
+}
+
+html{
+    scroll-behavior: smooth;
+}

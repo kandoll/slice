@@ -14,5 +14,8 @@
 @import "modules/_site-header.css";
 @import "modules/_slideshow.css";
 @import "modules/_primary-nav.css";
+@import "modules/_gallery.css";
 
-
+html{
+    scroll-behavior: smooth;
+}

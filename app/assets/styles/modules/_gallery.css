@@ -1,0 +1,18 @@
+.gallery{
+    max-width: 1200px;
+    margin: auto;
+    overflow: auto;
+}
+
+.grid-box{
+    margin: 5px;
+    border: 1px solid $mainPurple;
+    float: left;
+    width: 390px;
+}
+
+.gallery img{
+    width: 100%;
+    height: auto;
+    
+}

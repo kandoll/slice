@@ -1,0 +1,42 @@
+<html>
+    <head>
+            <meta name="viewport" content="width=device-width, initial-scale=1" />
+            <link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700' rel='stylesheet' type='text/css'>
+            <meta name="keywords" content="Kanika Dawalia, Sketching, Slice of life,asliceoflifetoday">
+           <!-- <link rel="stylesheet" href="styles/styles.css"> -->
+
+        <title>Admin</title>
+    </head>
+    <body>
+
+ <!-- ---------------------------------Site Header ----------------------------------  -->
+ <% include partials/nav.ejs %> 
+
+<!-- ----------------------------Admin Login--------------------------------------- -->    
+<div class="wrapper">
+    <div class="form">
+<form method="POST" action="/admin">
+<div class="form-group">
+    <label for="username">Username</label>
+    <input type="text" name="username" class="form-control" placeholder="Username">
+</div>
+
+<div class="form-group">
+        <label for="password">Password</label>
+        <input type="text" name="password" class="form-control" placeholder="Password">
+    </div>
+
+    <button type="submit" class="btn">Submit</button>
+        </form>
+        </div>
+        </div>
+    
+<!-- ---------------------------Footer section------------------------------- -->
+
+<% include partials/footer.ejs %> 
+
+<script src="scripts/App.js"></script>               
+    </body>
+</html>
+
+        

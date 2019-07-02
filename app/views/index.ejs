@@ -3,44 +3,13 @@
             <meta name="viewport" content="width=device-width, initial-scale=1" />
             <link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700' rel='stylesheet' type='text/css'>
             <meta name="keywords" content="Kanika Dawalia, Sketching, Slice of life,asliceoflifetoday">
-            <link rel="stylesheet" href="public/styles/styles.css">
+            <link rel="stylesheet" href="styles/styles.css">
 
         <title>Slice of life</title>
     </head>
     <body>
  <!-- ----------------------------Site Header ----------------------------------  -->
-     <header class="site-header">  
-       <div class="wrapper">
-         <div class="site-header__logo">
-           <span style="display:none">Kanika Dawalia</span>  
-            <img src="assets/images/logo.jpg" width="150px" height="150px">
-
-         </div>
-
-         <div class="site-header__menu-icon">
-            <div class="site-header__menu-icon__top"></div>
-            <div class="site-header__menu-icon__middle"></div>
-            <div class="site-header__menu-icon__bottom"></div>
-           </div>
-<div class="site-header__menu-content">
-    <div class="site-header__btn-container">
-        <a href="order.html" class="btn btn--orange">Place an Order</a>
-       </div>
-               
-   <nav class="primary-nav primary-nav--pull-right">
-       <ul>
-        <li><a href="#About-section">About</a></li>
-       <li><a href="gallery.html">Gallery</a></li>
-       <li><a href="#Videos-section">Videos</a></li>
-       <li><a href="#Pricing-section">Pricing</a></li>
-       <li><a href="faqs.html">FAQ</a></li>
-       </ul>
-   </nav>
-</div>
-</div>
-</header>
-
-
+   <% include partials/nav.ejs %> 
 
 <!-- ---------------------------Featured section------------------------------- -->
 
@@ -116,7 +85,7 @@
  <div class="about">
 <h1 class="headline">About</h1>
 <picture>
- <img src="assets/images/profile.jpg" class="about__image">
+ <img src="images/profile.jpg" class="about__image">
 </picture>
 <h2 class="about__name">Kanika Dawalia</h2>
 <p class="about__p">
@@ -267,22 +236,8 @@
         
  
 <!-- ---------------------------Footer section------------------------------- -->
+<% include partials/footer.ejs %> 
 
-<footer>
-  
-<div class="footer">
-<div class="wrapper">
-<div class="footer__email">
-<div>asliceoftoday@gmail.com</div>
-</div>
-                            
-<h5 class="footer__name">By Kanika Dawalia</h5>
-                            
-<h5 class="footer__copy">Copyright &copy; 2019 by A Slice
-   Of Life Today All Rights Reserved</h5>
-</div>
-</div>
-</footer>
-             <script src="temp/scripts/App.js"></script>               
+             <script src="scripts/App.js"></script>               
     </body>
 </html>

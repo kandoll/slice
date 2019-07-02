@@ -1067,6 +1067,11 @@ body {font-family: Verdana, sans-serif; margin:0}
     
 }
 
+.forms{
+    color: white;
+
+}
+
 html{
     scroll-behavior: smooth;
 }

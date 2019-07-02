@@ -60,11 +60,48 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 1);
+/******/ 	return __webpack_require__(__webpack_require__.s = 0);
 /******/ })
 /************************************************************************/
 /******/ ([
 /* 0 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _MobileMenu = __webpack_require__(1);
+
+var _MobileMenu2 = _interopRequireDefault(_MobileMenu);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var mobileMenu = new _MobileMenu2.default();
+
+//var mobileMenu = require('./modules/MobileMenu');
+//import slideShow from './modules/slideshow';
+//var slideShow = new slideShow();
+
+var p = __webpack_require__(3);
+
+/*
+var http = require('http');
+
+//Creating a server
+//1.require http module
+
+var server = http.createServer(function(req,res){
+    
+    res.writeHead(200,{'Content-Type':text/plain});
+    res.end('helllo');
+})
+
+server.listen(3000,'127.0.0.1');
+console.log('now listening to port 3000');
+*/
+
+/***/ }),
+/* 1 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -112,25 +149,6 @@ var MobileMenu = function () {
 }();
 
 exports.default = MobileMenu;
-
-/***/ }),
-/* 1 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-var _MobileMenu = __webpack_require__(0);
-
-var _MobileMenu2 = _interopRequireDefault(_MobileMenu);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var mobileMenu = new _MobileMenu2.default(); //import slideShow from './modules/slideshow';
-//var slideShow = new slideShow();
-
-var mobileMenu = __webpack_require__(0);
-var p = __webpack_require__(3);
 
 /***/ }),
 /* 2 */

@@ -3,7 +3,7 @@
             <meta name="viewport" content="width=device-width, initial-scale=1" />
             <link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700' rel='stylesheet' type='text/css'>
             <meta name="keywords" content="Kanika Dawalia, Sketching, Slice of life,asliceoflifetoday">
-           <!-- <link rel="stylesheet" href="styles/styles.css"> -->
+         <!--  <link rel="stylesheet" href="styles/styles.css"> -->
 
         <title>Welcome Admin</title>
     </head>
@@ -13,8 +13,19 @@
  <% include partials/nav.ejs %> 
 
 <!-- ----------------------------Welcome Admin--------------------------------------- -->    
+<div class="page-section" style="text-align: center">
+<div class="wrapper">
 <h1>Welcome Admin</h1>
-    
+<a href="/logout" class="btn btn--orange">Logout</a>
+<h2>Order List</h2>
+<ul>
+        <% for(var i=0 ;i< orders.length; i++){ %>
+            <li> <%= orders[i].items %></li>
+
+       <% } %>
+    </ul>
+    </div>
+</div>
 <!-- ---------------------------Footer section------------------------------- -->
 
 <% include partials/footer.ejs %> 

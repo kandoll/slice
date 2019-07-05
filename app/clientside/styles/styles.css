@@ -15,7 +15,7 @@
 @import "modules/_slideshow.css";
 @import "modules/_primary-nav.css";
 @import "modules/_gallery.css";
-@import "modules/_forms.css";
+@import "modules/_form.css";
 
 html{
     scroll-behavior: smooth;

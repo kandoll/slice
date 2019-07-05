@@ -3,7 +3,7 @@
             <meta name="viewport" content="width=device-width, initial-scale=1" />
             <link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700' rel='stylesheet' type='text/css'>
             <meta name="keywords" content="Kanika Dawalia, Sketching, Slice of life,asliceoflifetoday">
-          <!-- <link rel="stylesheet" href="styles/styles.css"> -->
+          <link rel="stylesheet" href="styles/styles.css">
 
         <title>Slice of life</title>
 
@@ -16,6 +16,7 @@
 <!--   <% include partials/nav.ejs %>   -->
 
 <!-- -----------------------------Order ----------------------------------------->
+<div class="page-section">
 <div class="order">
 <div class="wrapper">
 
@@ -23,58 +24,105 @@
         <form action="/order" method="POST">
 
 -->
-<form method="POST">
-    <table style= "top: 100px;">
-        <tbody>
-            <tr>
-                <td><input name="name" placeholder="Please Enter Your Name" required="" type="text" /><input name="_next" type="hidden" value="contactmsg.html" /></td>
-            </tr>
-            <tr>
-            </tr>
-            <tr>
-                <td><input name="email" placeholder="Please Enter Your Email" required="" type="email" /><input name="_subject" type="hidden" value="New Order Received" /></td>
-            </tr>
-            <tr>
-            </tr>
-            <tr>
-                <td><input name="phone" placeholder="Please Enter Your Phone No." required="" type="text" /></td>
-            </tr>
-            <tr>
-            </tr>
-            <tr>
-                <td><label>Select Your Sheet Size</label><br />
-                <select required=""><option name="A2">A2</option><option name="A3">A3</option><option name="A4">A4</option> </select></td>
-            </tr>
-            <tr>
-            </tr>
-            <tr>
-                <td><label>Select Your Sketch Type</label><br />
-                <select required=""><option name="Colored Sketch">Colored Sketch</option><option name="Black &amp; White">Black &amp; White</option><option name="Pen Sketch">Pen Sketch</option><option name="Painting">Painting</option> </select></td>
-            </tr>
-            <tr>
-            </tr>
-            <tr>
-                <td><label>Sketch to be made before</label><br />
-                <input name="date" required="" type="date" /></td>
-            </tr>
-            <tr>
-            </tr>
-            <tr>
-            </tr>
-            <tr>
-                <td><input name="Additional Information" placeholder="Any Additional Information" type="textarea" /></td>
-            </tr>
-            <tr>
-            </tr>
-            <tr>
-                <td><input type="submit" value="Submit" /></td>
-            </tr>
-            <tr>
-            </tr>
-        </tbody>
-    </table>
+
+<h1 style="text-align: center">Fill in the Order Details</h1>
+
+
+<form class="orderform" method="POST">
+<div class="ordertable" style="border: solid 2px orange; height:90%; width:100%; padding-top:50px;">
+        <% include ./partials/messages.ejs   %>
+
+    <label>Name</label>           
+    <input 
+    name="name"
+     placeholder="Name"
+      required="" 
+      type="text"
+      value="<%= typeof name != 'undefined'?name:'' %>"
+      />
+
+      <!-- <input name="_next" type="hidden" value="contactmsg.html" />  -->
+    <br><br>
+
+   <label>Email</label>
+   <input name="email"
+    placeholder="Email" 
+    required="" type="email" 
+    value="<%= typeof email != 'undefined'?email:'' %>"
+    />
+    
+    <!-- <input name="_subject" type="hidden" value="New Order Received" /> -->
+
+      <br><br>
+                
+      
+    <label>Phone No.</label>
+    <input name="phone"
+     placeholder="Phone No."
+      required="" type="text"
+      value="<%= typeof phone != 'undefined'?phone:'' %>"
+      />
+                
+      
+      <br><br>
+           
+    <label>Enter Your Sheet Size</label>
+    <input name="sheet"
+    placeholder="A!/A2/A3/A4."
+     required="" type="text"
+     value="<%= typeof sheet != 'undefined'?sheet:'' %>"
+     />
+
+    <!--
+    <select id="sheet" value="<%= typeof sheet != 'undefined'?sheet:'' %>"
+            >
+        <option name="A2">A2</option>
+        <option name="A3">A3</option>
+        <option name="A4">A4</option> 
+        
+    </select>  -->
+    <br><br>
+
+    <label>Select Your Sketch Type</label>
+   
+    <input name="kind"
+     placeholder="Colored/BNW"
+      required="" type="text"
+      value="<%= typeof kind != 'undefined'?kind:'' %>"
+      />
+   <!-- <select id="kind" value="<%= typeof kind != 'undefined'?kind:'' %>"
+        >
+       <option name="Colored Sketch">Colored Sketch</option>
+       <option name="Black &amp; White">Black &amp; White</option>
+       <option name="Pen Sketch">Pen Sketch</option>
+        </select> -->
+        <br><br>
+
+        
+<label>Delivery date</label>
+
+<input name="date" required="" type="date" 
+value="<%= typeof date != 'undefined'?date:'' %>"
+/>
+<br><br>
+
+    <label>Description</label>
+               
+    <br><br>
+        <textarea rows= "5" cols" name="info" 
+        value="<%= typeof info != 'undefined'?info:'' %>"
+
+        > </textarea>
+    
+
+     <br><br>
+            
+     <input class="btn"type="submit" value="Submit" />
+
+    </div>
     </form>
 </div>     
+</div>
 </div>
 <!-- ---------------------------Footer section------------------------------- -->
 <% include partials/footer.ejs %> 

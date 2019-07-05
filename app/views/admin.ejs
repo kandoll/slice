@@ -3,7 +3,7 @@
             <meta name="viewport" content="width=device-width, initial-scale=1" />
             <link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700' rel='stylesheet' type='text/css'>
             <meta name="keywords" content="Kanika Dawalia, Sketching, Slice of life,asliceoflifetoday">
-           <!-- <link rel="stylesheet" href="styles/styles.css"> -->
+           <link rel="stylesheet" href="styles/styles.css">
 
         <title>Admin</title>
     </head>
@@ -13,21 +13,27 @@
  <% include partials/nav.ejs %> 
 
 <!-- ----------------------------Admin Login--------------------------------------- -->    
+<div class="page-section">
+
 <div class="wrapper">
-    <div class="form">
+    <div class="orderform">
+        <div class="alogin" style="border: solid 2px Purple; padding: 10px ; width: 60% ;margin: auto; margin-top: 50px;"  >
+        <h1>Admin Login</h1>
 <form method="POST" action="/admin">
 <div class="form-group">
     <label for="username">Username</label>
-    <input type="text" name="username" class="form-control" placeholder="Username">
+    <input type="text" name="username" class="form-control" placeholder="Username"> <br><br>
 </div>
 
 <div class="form-group">
         <label for="password">Password</label>
-        <input type="text" name="password" class="form-control" placeholder="Password">
+        <input type="text" name="password" class="form-control" placeholder="Password"><br><br>
     </div>
 
     <button type="submit" class="btn">Submit</button>
         </form>
+        </div>
+        </div>
         </div>
         </div>
     

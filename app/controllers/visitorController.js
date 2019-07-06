@@ -20,7 +20,7 @@ app.get('/clientgallery',function(req,res){
 
 //---------------------------AUTH LOGIN----------------------------------------------------
 app.get('/auth/login',(req,res)=>{
-    req.render('login');
+    res.render('login');
 })
 
 

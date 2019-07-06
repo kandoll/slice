@@ -13,6 +13,7 @@ module.exports=function(app){
      
      app.get('/welcomeadmin',ensureAuthenticated,function(req,res){
         Order.find({},function(err,data){
+            console.log(data)
             if(err) throw err;
             else res.render('welcomeadmin',{orders:data});
         })

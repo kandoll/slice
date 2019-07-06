@@ -6,6 +6,11 @@
          <!--  <link rel="stylesheet" href="styles/styles.css"> -->
 
         <title>Welcome Admin</title>
+        <style>
+        table, th, td {
+  border: 1px solid black;
+}
+        </style>
     </head>
     <body>
 
@@ -20,10 +25,28 @@
 <h2>Order List</h2>
 <ul>
         <% for(var i=0 ;i< orders.length; i++){ %>
-            <li> <%= orders[i].items %></li>
+            <li> <%= orders[i].name %></li>
 
        <% } %>
     </ul>
+    
+
+<!-- Table -->
+<table>
+    <tr><td>Name</td> <td>Email</td> <td>Phone</td> <td>Sheet</td>  <td>Kind</td> <td>Date</td></tr>
+    <%for(let i in orders){%>
+        <tr>
+            <td> <%= orders[i].name %></td>
+            <td> <%= orders[i].email %></td>
+            <td> <%= orders[i].phone %></td>
+            <td> <%= orders[i].sheet %></td>
+            <td> <%= orders[i].kind %></td>
+            <td> <%= orders[i].date %></td>
+        </tr>
+    <%}%>
+</table>
+<!-- Table - END -->
+
     </div>
 </div>
 <!-- ---------------------------Footer section------------------------------- -->

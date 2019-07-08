@@ -41,17 +41,37 @@
  <div class="gallery">
      <div class="headline" style="top: 200px;"> <p style= "padding: 50px;">Gallery</p></div>
 
-<div class="grid-box">
- <img src="images/clientgallery/rana.jpg">
-</div> 
-<div class="grid-box">
- <img src= "images/clientgallery/sankalp.jpg">
-</div> 
-<div class="grid-box">
- <img src="images/clientgallery/srt.jpg">
-</div>
 
-<a href="/auth/login" class="btn btn--orange" style="padding:10px;margin:10px;">Login to add reviews</a>
+     <div class="grid-box">
+        <img id="myImg" onclick="myFunc(this)" src="images/clientgallery/rana.jpg" alt="Snow">
+      </div>
+        <!-- The Modal -->
+        <div id="myModal" class="modal">
+          <span class="close" onclick="modal.style.display='none'">&times;</span>
+          <img class="modal-content" id="img01">
+          <div id="caption"></div>
+        </div>
+        <div class="grid-box">
+            <img id="myImg" onclick="myFunc(this)" src="images/clientgallery/sankalp.jpg" alt="Snow">
+          </div>
+            <!-- The Modal -->
+            <div id="myModal" class="modal">
+              <span class="close" onclick="modal.style.display='none'">&times;</span>
+              <img class="modal-content" id="img01">
+              <div id="caption"></div>
+            </div>
+            <div class="grid-box">
+                <img id="myImg" onclick="myFunc(this)" src="images/clientgallery/srt.jpg" alt="Snow">
+              </div>
+                <!-- The Modal -->
+                <div id="myModal" class="modal">
+                  <span class="close" onclick="modal.style.display='none'">&times;</span>
+                  <img class="modal-content" id="img01">
+                  <div id="caption"></div>
+                </div>
+                  
+
+<a href="/auth/login" class="btn btn--orange" style="padding:20px;margin:50px;vertical-align: center;">Add reviews</a>
 
 </div>                                                                                
  </div>
@@ -59,6 +79,34 @@
 <!-- ---------------------------Footer section------------------------------- -->
 <% include partials/footer.ejs %> 
 
-             <script src="scripts/App.js"></script>               
+            <!-- <script src="scripts/App.js"></script>    -->
+            
+            <script>
+                // Get the modal
+              var modal = document.getElementById("myModal");
+              
+              // Get the image and insert it inside the modal - use its "alt" text as a caption
+              var modalImg = document.getElementById("img01");
+              var captionText = document.getElementById("caption");
+              
+              function myFunc(el){
+                var ImgSrc=el.src;
+                var altText=el.alt;
+                modal.style.display = "block";
+                modalImg.src = ImgSrc;
+                captionText.innerHTML = altText;
+              }
+              
+              window.onclick=function(event)
+              { if(event.target==modal)
+                { modal.style.display="none";
+               } 
+              }
+              
+              var span = document.getElementsByClassName("close")[0];
+              
+                </script>
+              
+      
     </body>
 </html>

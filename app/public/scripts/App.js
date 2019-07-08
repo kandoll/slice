@@ -78,27 +78,13 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 var mobileMenu = new _MobileMenu2.default();
 
-//var mobileMenu = require('./modules/MobileMenu');
-//import slideShow from './modules/slideshow';
-//var slideShow = new slideShow();
+//sideshow
 
 var p = __webpack_require__(3);
 
-/*
-var http = require('http');
+//modal images
 
-//Creating a server
-//1.require http module
-
-var server = http.createServer(function(req,res){
-    
-    res.writeHead(200,{'Content-Type':text/plain});
-    res.end('helllo');
-})
-
-server.listen(3000,'127.0.0.1');
-console.log('now listening to port 3000');
-*/
+var m = __webpack_require__(4);
 
 /***/ }),
 /* 1 */
@@ -10439,6 +10425,36 @@ function showSlides() {
   dots[slideIndex - 1].className += " active";
   setTimeout(showSlides, 3000); // Change image every 3 seconds
 }
+
+/***/ }),
+/* 4 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+// Get the modal
+var modal = document.getElementById("myModal");
+
+// Get the image and insert it inside the modal - use its "alt" text as a caption
+var modalImg = document.getElementById("img01");
+var captionText = document.getElementById("caption");
+
+function myFunc(el) {
+  var ImgSrc = el.src;
+  var altText = el.alt;
+  modal.style.display = "block";
+  modalImg.src = ImgSrc;
+  captionText.innerHTML = altText;
+}
+
+window.onclick = function (event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+};
+
+var span = document.getElementsByClassName("close")[0];
 
 /***/ })
 /******/ ]);

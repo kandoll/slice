@@ -6,31 +6,6 @@
             <link rel="stylesheet" href="styles/styles.css">
 
         <title>Slice of life</title>
-
-        <style>
-        .gallery{
-    
-    max-width: 1200px;
-    margin: auto;
-    overflow: auto;
-}
-
-.grid-box{
-    margin: 5px;
-    border: 1px solid $mainPurple;
-    float: left;
-    width: 390px;
-    height: 390px;
-    
-}
-
-.gallery img{
-    width: 100%;
-    height: 100%;
-    box-shadow: 0px 0px 20px 7px #DA33FF; 
-
-}
-        </style>
     </head>
     <body>
  <!-- ----------------------------Site Header ----------------------------------  -->
@@ -39,104 +14,337 @@
  <!-- --------------------------------Gallery---------------------------------------->
 
  <div class="gallery">
-     <div class="headline" style="top: 200px;"> <p style= "padding: 50px;">Gallery</p></div>
+     <div class="headline">Gallery</p></div>
 <div>
 <a href="/clientgallery" class="btn btn--orange" style="padding:10px;margin:10px;">Click here to see client gallery</a>
+</div>
+<!------------------------------Modal---------------------------------------------->
 
+<div class="grid-box">
+  <img id="myImg" onclick="myFunc(this)" src="images/gallery/adele.jpg" alt="Snow">
 </div>
-  <div class="grid-box">
-   <img src="images/gallery/adele.jpg">
- </div> 
- <div class="grid-box">
-  <img src="images/gallery/agony.jpg">
- </div> 
- <div class="grid-box">
-  <img src="images/gallery/aryab.jpg">
- </div> 
- <div class="grid-box">
-  <img src="images/gallery/aryac.jpg">
- </div> 
- <div class="grid-box">
-  <img src="images/gallery/assasin.jpg">
- </div> 
- <div class="grid-box">
-  <img src="images/gallery/bahubali.jpg">
- </div> 
+  <!-- The Modal -->
+  <div id="myModal" class="modal">
+    <span class="close" onclick="modal.style.display='none'">&times;</span>
+    <img class="modal-content" id="img01">
+    <div id="caption"></div>
+  </div>
+    
+  
 <div class="grid-box">
- <img src="images/gallery/bird.jpg">
-</div> 
-<div class="grid-box">
- <img src="images/gallery/deer.jpg">
-</div> 
-<div class="grid-box">
- <img src= "images/gallery/dexter.jpg">
-</div> 
-<div class="grid-box">
- <img src="images/gallery/lovely.jpg">
+  <img id="myImg" onclick="myFunc(this)" src="images/gallery/agony.jpg" alt="Snow">
 </div>
+  <!-- The Modal -->
+  <div id="myModal" class="modal">
+    <span class="close" onclick="modal.style.display='none'">&times;</span>
+    <img class="modal-content" id="img01">
+    <div id="caption"></div>
+  </div>
+
+  
 <div class="grid-box">
- <img src="images/gallery/magbeast.jpg">
+  <img id="myImg" onclick="myFunc(this)" src="images/gallery/aryab.jpg" alt="Snow">
 </div>
+  <!-- The Modal -->
+  <div id="myModal" class="modal">
+    <span class="close" onclick="modal.style.display='none'">&times;</span>
+    <img class="modal-content" id="img01">
+    <div id="caption"></div>
+  </div>
+  
 <div class="grid-box">
-<img src="images/gallery/mockingjay.jpg">
+  <img id="myImg" onclick="myFunc(this)" src="images/gallery/aryac.jpg" alt="Snow">
 </div>
+  <!-- The Modal -->
+  <div id="myModal" class="modal">
+    <span class="close" onclick="modal.style.display='none'">&times;</span>
+    <img class="modal-content" id="img01">
+    <div id="caption"></div>
+  </div>
+  
 <div class="grid-box">
- <img src="images/gallery/nlights.jpg">
+  <img id="myImg" onclick="myFunc(this)" src="images/gallery/assasin.jpg" alt="Snow">
 </div>
- <div class="grid-box">
- <img src="images/gallery/nlights2.jpg">
- </div>
+  <!-- The Modal -->
+  <div id="myModal" class="modal">
+    <span class="close" onclick="modal.style.display='none'">&times;</span>
+    <img class="modal-content" id="img01">
+    <div id="caption"></div>
+  </div>
+  
 <div class="grid-box">
- <img src="assets/images/gallery/ollena.jpg">
- </div>   
- <div class="grid-box">
- <img src="assets/images/gallery/peacock.jpg">
-</div>      
-<div class="grid-box">
-<img src="assets/images/gallery/rain.jpg">
-</div>  
-<div class="grid-box">
-<img src="assets/images/gallery/srk.jpg">
-</div>  
-<div class="grid-box">
-<img src="assets/images/gallery/tamasha.jpg">
+  <img id="myImg" onclick="myFunc(this)" src="images/gallery/bahubali.jpg" alt="Snow">
 </div>
+  <!-- The Modal -->
+  <div id="myModal" class="modal">
+    <span class="close" onclick="modal.style.display='none'">&times;</span>
+    <img class="modal-content" id="img01">
+    <div id="caption"></div>
+  </div>
+  
 <div class="grid-box">
-<img src="assets/images/gallery/thor.jpg">
+  <img id="myImg" onclick="myFunc(this)" src="images/gallery/bird.jpg" alt="Snow">
 </div>
- <div class="grid-box">
-   <img src="assets/images/gallery/venom.jpg">
- </div>     
+  <!-- The Modal -->
+  <div id="myModal" class="modal">
+    <span class="close" onclick="modal.style.display='none'">&times;</span>
+    <img class="modal-content" id="img01">
+    <div id="caption"></div>
+  </div>
+  
 <div class="grid-box">
-<img src="assets/images/gallery/dumbeldore.jpg">
-</div>     
-<div class="grid-box">
- <img src="assets/images/gallery/hannah.jpg">
-</div>     
-<div class="grid-box">
-<img src="assets/images/gallery/harley.jpg">
- </div>     
-<div class="grid-box">
-<img src="assets/images/gallery/ian.jpg">
-</div>     
-<div class="grid-box">
-<img src="assets/images/gallery/joffrey.jpg">
-</div>     
-<div class="grid-box">
- <img src="assets/images/gallery/joker.jpg">
+  <img id="myImg" onclick="myFunc(this)" src="images/gallery/deer.jpg" alt="Snow">
 </div>
+  <!-- The Modal -->
+  <div id="myModal" class="modal">
+    <span class="close" onclick="modal.style.display='none'">&times;</span>
+    <img class="modal-content" id="img01">
+    <div id="caption"></div>
+  </div>
+  
 <div class="grid-box">
-<img src="assets/images/gallery/jon.jpg">
-</div>  
+  <img id="myImg" onclick="myFunc(this)" src="images/gallery/dexter.jpg" alt="Snow">
+</div>
+  <!-- The Modal -->
+  <div id="myModal" class="modal">
+    <span class="close" onclick="modal.style.display='none'">&times;</span>
+    <img class="modal-content" id="img01">
+    <div id="caption"></div>
+  </div>
+  
 <div class="grid-box">
-        <img src="assets/images/gallery/khaleesi.jpg">
-        </div>                                      
-                                                        
- </div>
+  <img id="myImg" onclick="myFunc(this)" src="images/gallery/dumbeldore.jpg" alt="Snow">
+</div>
+  <!-- The Modal -->
+  <div id="myModal" class="modal">
+    <span class="close" onclick="modal.style.display='none'">&times;</span>
+    <img class="modal-content" id="img01">
+    <div id="caption"></div>
+  </div>
+  
+<div class="grid-box">
+  <img id="myImg" onclick="myFunc(this)" src="images/gallery/hannah.jpg" alt="Snow">
+</div>
+  <!-- The Modal -->
+  <div id="myModal" class="modal">
+    <span class="close" onclick="modal.style.display='none'">&times;</span>
+    <img class="modal-content" id="img01">
+    <div id="caption"></div>
+  </div>
+  
+<div class="grid-box">
+  <img id="myImg" onclick="myFunc(this)" src="images/gallery/harley.jpg" alt="Snow">
+</div>
+  <!-- The Modal -->
+  <div id="myModal" class="modal">
+    <span class="close" onclick="modal.style.display='none'">&times;</span>
+    <img class="modal-content" id="img01">
+    <div id="caption"></div>
+  </div>
+  
+<div class="grid-box">
+  <img id="myImg" onclick="myFunc(this)" src="images/gallery/ian.jpg" alt="Snow">
+</div>
+  <!-- The Modal -->
+  <div id="myModal" class="modal">
+    <span class="close" onclick="modal.style.display='none'">&times;</span>
+    <img class="modal-content" id="img01">
+    <div id="caption"></div>
+  </div>
+  
+<div class="grid-box">
+  <img id="myImg" onclick="myFunc(this)" src="images/gallery/joffrey.jpg" alt="Snow">
+</div>
+  <!-- The Modal -->
+  <div id="myModal" class="modal">
+    <span class="close" onclick="modal.style.display='none'">&times;</span>
+    <img class="modal-content" id="img01">
+    <div id="caption"></div>
+  </div>
+  
+<div class="grid-box">
+  <img id="myImg" onclick="myFunc(this)" src="images/gallery/joker.jpg" alt="Snow">
+</div>
+  <!-- The Modal -->
+  <div id="myModal" class="modal">
+    <span class="close" onclick="modal.style.display='none'">&times;</span>
+    <img class="modal-content" id="img01">
+    <div id="caption"></div>
+  </div>
+  
+<div class="grid-box">
+  <img id="myImg" onclick="myFunc(this)" src="images/gallery/jon.jpg" alt="Snow">
+</div>
+  <!-- The Modal -->
+  <div id="myModal" class="modal">
+    <span class="close" onclick="modal.style.display='none'">&times;</span>
+    <img class="modal-content" id="img01">
+    <div id="caption"></div>
+  </div>
+  
+<div class="grid-box">
+  <img id="myImg" onclick="myFunc(this)" src="images/gallery/khaleesi.jpg" alt="Snow">
+</div>
+  <!-- The Modal -->
+  <div id="myModal" class="modal">
+    <span class="close" onclick="modal.style.display='none'">&times;</span>
+    <img class="modal-content" id="img01">
+    <div id="caption"></div>
+  </div>
+  
+<div class="grid-box">
+  <img id="myImg" onclick="myFunc(this)" src="images/gallery/magbeast.jpg" alt="Snow">
+</div>
+  <!-- The Modal -->
+  <div id="myModal" class="modal">
+    <span class="close" onclick="modal.style.display='none'">&times;</span>
+    <img class="modal-content" id="img01">
+    <div id="caption"></div>
+  </div>
+  
+<div class="grid-box">
+  <img id="myImg" onclick="myFunc(this)" src="images/gallery/lovely.jpg" alt="Snow">
+</div>
+  <!-- The Modal -->
+  <div id="myModal" class="modal">
+    <span class="close" onclick="modal.style.display='none'">&times;</span>
+    <img class="modal-content" id="img01">
+    <div id="caption"></div>
+  </div>
+  
+<div class="grid-box">
+  <img id="myImg" onclick="myFunc(this)" src="images/gallery/mockingjay.jpg" alt="Snow">
+</div>
+  <!-- The Modal -->
+  <div id="myModal" class="modal">
+    <span class="close" onclick="modal.style.display='none'">&times;</span>
+    <img class="modal-content" id="img01">
+    <div id="caption"></div>
+  </div>
+  
+<div class="grid-box">
+  <img id="myImg" onclick="myFunc(this)" src="images/gallery/nlights.jpg" alt="Snow">
+</div>
+  <!-- The Modal -->
+  <div id="myModal" class="modal">
+    <span class="close" onclick="modal.style.display='none'">&times;</span>
+    <img class="modal-content" id="img01">
+    <div id="caption"></div>
+  </div>
+  
+<div class="grid-box">
+  <img id="myImg" onclick="myFunc(this)" src="images/gallery/nlights2.jpg" alt="Snow">
+</div>
+  <!-- The Modal -->
+  <div id="myModal" class="modal">
+    <span class="close" onclick="modal.style.display='none'">&times;</span>
+    <img class="modal-content" id="img01">
+    <div id="caption"></div>
+  </div>
+  
+<div class="grid-box">
+  <img id="myImg" onclick="myFunc(this)" src="images/gallery/ollena.jpg" alt="Snow">
+</div>
+  <!-- The Modal -->
+  <div id="myModal" class="modal">
+    <span class="close" onclick="modal.style.display='none'">&times;</span>
+    <img class="modal-content" id="img01">
+    <div id="caption"></div>
+  </div>
+  
+<div class="grid-box">
+  <img id="myImg" onclick="myFunc(this)" src="images/gallery/peacock.jpg" alt="Snow">
+</div>
+  <!-- The Modal -->
+  <div id="myModal" class="modal">
+    <span class="close" onclick="modal.style.display='none'">&times;</span>
+    <img class="modal-content" id="img01">
+    <div id="caption"></div>
+  </div>
+  
+<div class="grid-box">
+  <img id="myImg" onclick="myFunc(this)" src="images/gallery/rain.jpg" alt="Snow">
+</div>
+  <!-- The Modal -->
+  <div id="myModal" class="modal">
+    <span class="close" onclick="modal.style.display='none'">&times;</span>
+    <img class="modal-content" id="img01">
+    <div id="caption"></div>
+  </div>
+  
+<div class="grid-box">
+  <img id="myImg" onclick="myFunc(this)" src="images/gallery/srk.jpg" alt="Snow">
+</div>
+  <!-- The Modal -->
+  <div id="myModal" class="modal">
+    <span class="close" onclick="modal.style.display='none'">&times;</span>
+    <img class="modal-content" id="img01">
+    <div id="caption"></div>
+  </div>
+  
+<div class="grid-box">
+  <img id="myImg" onclick="myFunc(this)" src="images/gallery/tamasha.jpg" alt="Snow">
+</div>
+  <!-- The Modal -->
+  <div id="myModal" class="modal">
+    <span class="close" onclick="modal.style.display='none'">&times;</span>
+    <img class="modal-content" id="img01">
+    <div id="caption"></div>
+  </div>
+  
+<div class="grid-box">
+  <img id="myImg" onclick="myFunc(this)" src="images/gallery/venom.jpg" alt="Snow">
+</div>
+  <!-- The Modal -->
+  <div id="myModal" class="modal">
+    <span class="close" onclick="modal.style.display='none'">&times;</span>
+    <img class="modal-content" id="img01">
+    <div id="caption"></div>
+  </div>
+  
+<div class="grid-box">
+  <img id="myImg" onclick="myFunc(this)" src="images/gallery/water.jpg" alt="Snow">
+</div>
+  <!-- The Modal -->
+  <div id="myModal" class="modal">
+    <span class="close" onclick="modal.style.display='none'">&times;</span>
+    <img class="modal-content" id="img01">
+    <div id="caption"></div>
+  </div>
+              </div>
+                                                  
+ 
                 
 <!-- ---------------------------Footer section------------------------------- -->
 <% include partials/footer.ejs %> 
 
-             <script src="scripts/App.js"></script>               
+<!--  <script src="scripts/App.js"></script>     -->          
+
+        <script>
+          // Get the modal
+        var modal = document.getElementById("myModal");
+        
+        // Get the image and insert it inside the modal - use its "alt" text as a caption
+        var modalImg = document.getElementById("img01");
+        var captionText = document.getElementById("caption");
+        
+        function myFunc(el){
+          var ImgSrc=el.src;
+          var altText=el.alt;
+          modal.style.display = "block";
+          modalImg.src = ImgSrc;
+          captionText.innerHTML = altText;
+        }
+        
+        window.onclick=function(event)
+        { if(event.target==modal)
+          { modal.style.display="none";
+         } 
+        }
+        
+        var span = document.getElementsByClassName("close")[0];
+        
+          </script>
+        
     </body>
 </html>

@@ -2,9 +2,28 @@
 //Order model
 const Order=require('../model/Order')
 const { ensureAuthenticated }= require('../config/auth');
+const passport=require('passport');
+const User=require('../model/User');
+
+ 
+/*const authCheck= (req,res,next)=>{
+    //if logged in
+    if(!req.user){
+res.redirect('/auth/login')
+//if not logged in
+    }else{
+        next();
+    }
+}; */
 
 module.exports=function(app){
 
+//---------------------profile----------------------------------------
+app.get('/auth/profile',(req,res)=>{
+  //  res.send('profile page of'+req.user.username);
+   res.render('profile',{user:req.user});
+
+})
 //-----------------------------------------HOME---------------------------------------------
 app.get('/home',function(req,res){
     res.render('index.ejs');
@@ -13,10 +32,14 @@ app.get('/home',function(req,res){
 app.get('/gallery',function(req,res){
     res.render('gallery.ejs');
 });
+app.get('/modal',function(req,res){
+    res.render('modal.ejs');
+});
     
 app.get('/clientgallery',function(req,res){
         res.render('clientgallery.ejs');
 });
+
 
 //---------------------------AUTH LOGIN----------------------------------------------------
 app.get('/auth/login',(req,res)=>{
@@ -26,15 +49,22 @@ app.get('/auth/login',(req,res)=>{
 
 //---------------------------AUTH LOGOUT---------------------------------------------------
 app.get('/auth/logout',(req,res)=>{
-    res.send('logging out');
-        //handle with passport
-
+req.logout();
+res.redirect('/clientgallery');
 })
 
 //----------------------AUTH WITH GOOGLE---------------------------------------------------
-app.get('/auth/google',(req,res)=>{
-    //handle with passport
-    res.send('loggng in with google');
+app.get('/auth/google',passport.authenticate('google',{
+    scope:['profile']
+}));
+
+//--------------callback route for google to redirect to----------------------------
+
+app.get('/auth/google/redirect',passport.authenticate('google'),(req,res)=>{
+  
+   // res.send(req.user);
+   res.redirect('/auth/profile')
+
 })
 //---------------------------------------FAQS-------------------------------------------
     
@@ -114,7 +144,7 @@ let errors=[];
             info
               });
 
-              console.log(neworder)
+             // console.log(neworder)
 
               neworder.save()
               .then(order=>{

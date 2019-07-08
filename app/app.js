@@ -5,6 +5,8 @@ var db = require('./config/connectdb');
 var session=require('express-session')
 
 var passport = require('passport');
+const keys=require('./config/keys');
+const cookieSession=require('cookie-session');
 
 
 //Passport config
@@ -17,7 +19,12 @@ var visitorController = require('./controllers/visitorController');
 //set template engine
 app.set('view engine','ejs')
 
+//cookie sesssion
 
+app.use(cookieSession({
+maxAge:24*60*60*1000,
+keys:[keys.session.cookieKey]
+}));
 //body-parser
 app.use(express.urlencoded({extended:false}));
 

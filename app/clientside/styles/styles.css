@@ -16,6 +16,7 @@
 @import "modules/_primary-nav.css";
 @import "modules/_gallery.css";
 @import "modules/_form.css";
+@import "modules/_admin.css";
 
 html{
     scroll-behavior: smooth;

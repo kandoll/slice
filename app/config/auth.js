@@ -1,3 +1,4 @@
+
 module.exports={
     ensureAuthenticated:function(req,res,next){
 if(req.isAuthenticated()){
@@ -5,4 +6,6 @@ if(req.isAuthenticated()){
 }
 res.redirect('/home');
     }
+
+ 
 }

@@ -1,6 +1,9 @@
-var gulp = require('gulp'),
+var express = require('express'),
+ app=express(),
+ gulp = require('gulp'),
  watch = require('gulp-watch'),
  browserSync = require('browser-sync').create();
+ app.set('view engine','ejs')
 
 
 gulp.task('watch',function(){
@@ -10,7 +13,7 @@ gulp.task('watch',function(){
             baseDir:"app"
         }
     })
-    watch('./app/views/index.ejs',function(){
+    watch('./app/views/**/*.ejs',function(){
         browserSync.reload();
         });
 

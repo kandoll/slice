@@ -1049,9 +1049,15 @@ body {font-family: Verdana, sans-serif; margin:0}
     }
 
 .gallery{
+    
     max-width: 1200px;
     margin: auto;
     overflow: auto;
+}
+
+.headline{
+    top: 200px;
+     padding: 50px;
 }
 
 .grid-box{
@@ -1059,13 +1065,114 @@ body {font-family: Verdana, sans-serif; margin:0}
     border: 1px solid #DA33FF;
     float: left;
     width: 390px;
+    height: 390px;  
 }
 
 .gallery img{
     width: 100%;
-    height: auto;
-    
+    height: 100%;
+    -webkit-box-shadow: 0px 0px 20px 7px #DA33FF;
+            box-shadow: 0px 0px 20px 7px #DA33FF;
+
 }
+
+.gallery img:hover {opacity: 0.7;}
+
+/*-----------------------------------------------Modal CSS----------------------------*/
+
+.myImg {
+    border-radius: 5px;
+    cursor: pointer;
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
+  }
+
+.myImg:hover {opacity: 0.7;}
+
+/* The Modal (background) */
+
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+  }
+
+/* Modal Content (image) */
+
+.modal-content {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+  }
+
+/* Caption of Modal Image */
+
+.caption {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+    text-align: center;
+    color: #ccc;
+    padding: 10px 0;
+    height: 150px;
+  }
+
+/* Add Animation */
+
+.modal-content, #caption {  
+    -webkit-animation-name: zoom;
+    -webkit-animation-duration: 0.6s;
+    animation-name: zoom;
+    animation-duration: 0.6s;
+  }
+
+@-webkit-keyframes zoom {
+    from {-webkit-transform:scale(0)} 
+    to {-webkit-transform:scale(1)}
+  }
+
+@keyframes zoom {
+    from {-webkit-transform:scale(0);transform:scale(0)} 
+    to {-webkit-transform:scale(1);transform:scale(1)}
+  }
+
+/* The Close Button */
+
+.close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
+  }
+
+.close:hover,
+  .close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+/* 100% Image Width on Smaller Screens */
+
+@media only screen and (max-width: 700px){
+    .modal-content {
+      width: 100%;
+    }
+  }
 
 .orderform{
     color: oranges;
@@ -1078,6 +1185,49 @@ body {font-family: Verdana, sans-serif; margin:0}
     margin-right: auto;
 
 }
+
+.alogin{
+    -webkit-box-shadow: 0px 0px 20px 7px #DA33FF;
+            box-shadow: 0px 0px 20px 7px #DA33FF;
+    padding: 10px ;
+     width: 60% ;
+     margin: auto; 
+     margin-top: 50px;
+}
+
+.order-table{
+    -webkit-box-shadow: 0px 0px 20px 7px #DA33FF;
+            box-shadow: 0px 0px 20px 7px #DA33FF;
+
+
+}
+
+.order-table__style{
+    margin-left:auto;
+    margin-right:auto;
+    margin-top:20px;
+    margin-bottom:20px;
+    border:2px solid #DA33FF;
+    padding:30px;
+    text-align:center;
+    width:100%;
+    }
+
+tr:hover {
+    background-color:#DA33FF;
+}
+
+td{
+    padding:10px;
+
+}
+
+th {
+        background-color:#d59541;
+        color: white;
+        padding:10px;
+        vertical-align:center;
+      }
 
 html{
     scroll-behavior: smooth;

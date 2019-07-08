@@ -3,7 +3,7 @@
             <meta name="viewport" content="width=device-width, initial-scale=1" />
             <link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700' rel='stylesheet' type='text/css'>
             <meta name="keywords" content="Kanika Dawalia, Sketching, Slice of life,asliceoflifetoday">
-         <!--  <link rel="stylesheet" href="styles/styles.css"> -->
+         <link rel="stylesheet" href="styles/styles.css"> 
 
         <title>Welcome Admin</title>
         <style>
@@ -22,29 +22,33 @@
 <div class="wrapper">
 <h1>Welcome Admin</h1>
 <a href="/logout" class="btn btn--orange">Logout</a>
-<h2>Order List</h2>
-<ul>
-        <% for(var i=0 ;i< orders.length; i++){ %>
-            <li> <%= orders[i].name %></li>
-
-       <% } %>
-    </ul>
-    
+<h2>Order List</h2>    
 
 <!-- Table -->
-<table>
-    <tr><td>Name</td> <td>Email</td> <td>Phone</td> <td>Sheet</td>  <td>Kind</td> <td>Date</td></tr>
+<div class="order-table">
+<table class="order-table__style">
+    <tr>
+        <th>Name</th>
+         <th>Email</th>
+          <th>Phone</th>
+           <th>Sheet</th>
+             <th>Type</th>
+              <th>Date</th>
+              <th>Status</th>
+            </tr>
     <%for(let i in orders){%>
-        <tr>
+        <tr class="order-table--row">
             <td> <%= orders[i].name %></td>
             <td> <%= orders[i].email %></td>
             <td> <%= orders[i].phone %></td>
             <td> <%= orders[i].sheet %></td>
             <td> <%= orders[i].kind %></td>
             <td> <%= orders[i].date %></td>
+            <td>Pending</td>
         </tr>
     <%}%>
 </table>
+</div>
 <!-- Table - END -->
 
     </div>

@@ -18,6 +18,6 @@
 @import "modules/_form.css";
 @import "modules/_admin.css";
 
-html{
-    scroll-behavior: smooth;
+html {
+  scroll-behavior: smooth;
 }

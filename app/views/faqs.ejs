@@ -1,60 +1,68 @@
 <html>
-    <head>
-            <meta name="viewport" content="width=device-width, initial-scale=1" />
-            <link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700' rel='stylesheet' type='text/css'>
-            <meta name="keywords" content="Kanika Dawalia, Sketching, Slice of life,asliceoflifetoday">
-            <link rel="stylesheet" href="styles/styles.css">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <meta
+      name="keywords"
+      content="Kanika Dawalia, Sketching, Slice of life,asliceoflifetoday"
+    />
+    <link rel="stylesheet" href="styles/styles.css" />
 
-        <title>Slice of life</title>
-    </head>
-    <body>
+    <title>Slice of life</title>
+  </head>
+  <body>
+    <!-- ---------------------------------Site Header ----------------------------------  -->
+    <% include partials/nav.ejs %>
 
- <!-- ---------------------------------Site Header ----------------------------------  -->
- <% include partials/nav.ejs %> 
+    <!-- ----------------------------FAQ --------------------------------------- -->
+    <div class="page-section">
+      <div style=" vertical-align: center;" class="FAQ">
+        <H1 style="padding: 20px;text-align: center;">FAQs</H1>
 
-<!-- ----------------------------FAQ --------------------------------------- -->    
-<div class="page-section">
- <div style=" text-align: center;" class="FAQ">
-  <H1 style="padding: 80px;" >FAQs</H1>
-                    
- <div class="FAQ__content">
- <div style="padding:20px;">
- <b>Q: What is the Mode of payment?</b><br />
- A: You can either use Paytm/Tez/Phone Pay Apps to pay for your order. 
- Direct transfer into Bank account is also available.
-</div>
-                    
-<div style="padding:20px;">
-<b>Q: Do you provide Complete Framed Sketches also?</b><br />
- A: As of now, we do not provide this service. However, 
- arrangements can be done and the cost of frame would be added.
-</div>
-                    
-<div style="padding:20px;">
-<b>Q: How early do I have to order so that it is delivered to me on time?</b><br />
-A: The order should be made 10 days prior to the date of
- delivery as shipping may take time.
-</div>
-                    
-<div style="padding:20px;"><b>Q: When is the Payment to be done?</b><br />
-A: All Payments will be taken prior to commencement of the order.
-</div>
-                    
-<div style="padding:20px;">
-<b>Q: Can changes be made, once I have already placed an order?</b><br />
-A: Any Change Requests in either image, size of Sketch, etc. will
- be entertained within first 2 days of the order.
-</div>
-</div>
-</div>
+        <div class="FAQ__content">
+          <div style="padding:30px;">
+            <b>Q: What is the Mode of payment?</b><br><br>
+            A: You can either use Paytm/Google Pay/Phone Pay Apps to pay for your
+            order. Direct transfer into Bank account is also available.
+          </div>
 
-</div>
-<!-- ---------------------------Footer section------------------------------- -->
+          <div style="padding:20px;">
+            <b>Q: Do you provide Complete Framed Sketches also?</b><br><br>
+            A: As of now, we do not provide this service. However, arrangements
+            can be done and the cost of frame would be added.
+          </div>
 
-<% include partials/footer.ejs %> 
+          <div style="padding:20px;">
+            <b
+              >Q: How early do I have to order so that it is delivered to me on
+              time?</b
+            ><br><br>
+            A: The order should be made 10 days prior to the date of delivery as
+            shipping may take time.
+          </div>
 
-<script src="scripts/App.js"></script>               
-    </body>
+          <div style="padding:20px;">
+            <b>Q: When is the Payment to be done?</b><br><br>
+            A: All Payments will be taken prior to commencement of the order.
+          </div>
+
+          <div style="padding:20px;">
+            <b>Q: Can changes be made, once I have already placed an order?</b
+            ><br><br>
+            A: Any Change Requests in either image, size of Sketch, etc. will be
+            entertained within first 2 days of the order.
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- ---------------------------Footer section------------------------------- -->
+
+    <% include partials/footer.ejs %>
+
+    <script src="scripts/App.js"></script>
+  </body>
 </html>
-
-        

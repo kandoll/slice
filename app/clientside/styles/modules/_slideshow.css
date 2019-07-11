@@ -1,6 +1,13 @@
-* {box-sizing: border-box;}
-body {font-family: Verdana, sans-serif; margin:0}
-.mySlides {display: none}
+* {
+  box-sizing: border-box;
+}
+body {
+  font-family: Verdana, sans-serif;
+  margin: 0;
+}
+.mySlides {
+  display: none;
+}
 /*img {vertical-align: middle;
 } */
 
@@ -11,22 +18,21 @@ body {font-family: Verdana, sans-serif; margin:0}
   margin: auto;
   box-shadow: 1px 1px 20px 8px $mainPurple;
 
-  @mixin atMedium{
+  @mixin atMedium {
     width: 500px;
-
   }
 
-  @mixin atLarge{
+  @mixin atLarge {
     width: 1000px;
-
   }
-  &__image{
+  &__image {
     vertical-align: middle;
   }
 }
 
 /* Next & previous buttons */
-.prev, .next {
+.prev,
+.next {
   cursor: pointer;
   position: absolute;
   top: 50%;
@@ -48,8 +54,9 @@ body {font-family: Verdana, sans-serif; margin:0}
 }
 
 /* On hover, add a black background color with a little bit see-through */
-.prev:hover, .next:hover {
-  background-color: rgba(0,0,0,0.8);
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
 }
 
 /* Caption text */
@@ -84,7 +91,8 @@ body {font-family: Verdana, sans-serif; margin:0}
   transition: background-color 0.6s ease;
 }
 
-.active, .dot:hover {
+.active,
+.dot:hover {
   background-color: #717171;
 }
 
@@ -97,16 +105,28 @@ body {font-family: Verdana, sans-serif; margin:0}
 }
 
 @-webkit-keyframes fade {
-  from {opacity: .4} 
-  to {opacity: 1}
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 @keyframes fade {
-  from {opacity: .4} 
-  to {opacity: 1}
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 /* On smaller screens, decrease text size */
 @media only screen and (max-width: 300px) {
-  .prev, .next,.text {font-size: 11px}
+  .prev,
+  .next,
+  .text {
+    font-size: 11px;
+  }
 }

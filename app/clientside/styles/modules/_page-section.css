@@ -1,10 +1,8 @@
-.page-section{
+.page-section {
+  padding: 0.5rem 0;
+  box-shadow: 0px 0px 20px 7px $mainPurple;
 
-    padding: 0.5rem 0; 
-    box-shadow: 0px 0px 20px 7px $mainPurple; 
-
-    @mixin atMedium{
-        padding: 4.5rem 0; 
-
-    }
+  @mixin atMedium {
+    padding: 4.5rem 0;
+  }
 }

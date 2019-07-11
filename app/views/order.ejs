@@ -29,49 +29,67 @@
 
 
 <form class="orderform" method="POST">
-<div class="ordertable" style="border: solid 2px orange; height:90%; width:100%; padding-top:50px;">
+<div class="ordertable" style="border: solid 2px orange; height:90%; width:100%;padding-top:50px;">
         <% include ./partials/messages.ejs   %>
 
-    <label>Name</label>           
-    <input 
-    name="name"
-     placeholder="Name"
-      required="" 
-      type="text"
-      value="<%= typeof name != 'undefined'?name:'' %>"
-      />
+        <table style="margin: 0 auto;">
 
-      <!-- <input name="_next" type="hidden" value="contactmsg.html" />  -->
-    <br><br>
+<tr>
+    <td>
+            <label>Name</label>           
 
-   <label>Email</label>
-   <input name="email"
-    placeholder="Email" 
-    required="" type="email" 
-    value="<%= typeof email != 'undefined'?email:'' %>"
-    />
-    
-    <!-- <input name="_subject" type="hidden" value="New Order Received" /> -->
+    </td>
+    <td>
+            <input 
+            name="name"
+             placeholder="Name"
+              required="" 
+              type="text"
+              value="<%= typeof name != 'undefined'?name:'' %>"
+              />
+        
+    </td>
+</tr>
+    <tr>
+        <td>
+                <label>Email</label>
 
-      <br><br>
+        </td>
+        <td>
+                <input name="email"
+                placeholder="Email" 
+                required="" type="email" 
+                value="<%= typeof email != 'undefined'?email:'' %>"
+                />
+        </td>
+    </tr>
+
+
+   
+    <tr>
+        <td>    <label>Phone No.</label>
+        </td>
+        <td>
+                <input name="phone"
+                placeholder="Phone No."
+                 required="" type="text"
+                 value="<%= typeof phone != 'undefined'?phone:'' %>"
+                 />
+                 
+        </td>
+    </tr>
                 
-      
-    <label>Phone No.</label>
-    <input name="phone"
-     placeholder="Phone No."
-      required="" type="text"
-      value="<%= typeof phone != 'undefined'?phone:'' %>"
-      />
-                
-      
-      <br><br>
-           
-    <label>Enter Your Sheet Size</label>
-    <input name="sheet"
-    placeholder="A!/A2/A3/A4."
-     required="" type="text"
-     value="<%= typeof sheet != 'undefined'?sheet:'' %>"
-     />
+      <tr>
+          <td>    <label>Enter Your Sheet Size</label>
+          </td>
+          <td>
+                <input name="sheet"
+                placeholder="A!/A2/A3/A4."
+                 required="" type="text"
+                 value="<%= typeof sheet != 'undefined'?sheet:'' %>"
+                 />
+
+                 
 
     <!--
     <select id="sheet" value="<%= typeof sheet != 'undefined'?sheet:'' %>"
@@ -81,45 +99,64 @@
         <option name="A4">A4</option> 
         
     </select>  -->
-    <br><br>
-
-    <label>Select Your Sketch Type</label>
-   
-    <input name="kind"
-     placeholder="Colored/BNW"
-      required="" type="text"
-      value="<%= typeof kind != 'undefined'?kind:'' %>"
-      />
-   <!-- <select id="kind" value="<%= typeof kind != 'undefined'?kind:'' %>"
-        >
-       <option name="Colored Sketch">Colored Sketch</option>
-       <option name="Black &amp; White">Black &amp; White</option>
-       <option name="Pen Sketch">Pen Sketch</option>
-        </select> -->
-        <br><br>
-
-        
-<label>Delivery date</label>
-
-<input name="date" required="" type="date" 
-value="<%= typeof date != 'undefined'?date:'' %>"
-/>
-<br><br>
-
-    <label>Description</label>
-               
-    <br><br>
-        <textarea rows= "5" cols" name="info" 
-        value="<%= typeof info != 'undefined'?info:'' %>"
-
-        > </textarea>
+          </td>
+      </tr>          
     
+<tr>
+    <td>
+            <label>Select Your Sketch Type</label>
 
-     <br><br>
+    </td>
+    <td>
+            <input name="kind"
+            placeholder="Colored/BNW"
+             required="" type="text"
+             value="<%= typeof kind != 'undefined'?kind:'' %>"
+             />
+          <!-- <select id="kind" value="<%= typeof kind != 'undefined'?kind:'' %>"
+               >
+              <option name="Colored Sketch">Colored Sketch</option>
+              <option name="Black &amp; White">Black &amp; White</option>
+              <option name="Pen Sketch">Pen Sketch</option>
+               </select> -->
+    </td>
+</tr>
+   
+<tr>
+    <td>
+            <label>Delivery date</label>
+
+    </td>
+    <td>
+            <input name="date" required="" type="date" 
+            value="<%= typeof date != 'undefined'?date:'' %>"
+            />
             
-     <input class="btn"type="submit" value="Submit" />
+    </td>
+</tr>
+        
+<tr>
+    <td>    <label>Description</label>
+    </td>
+    <td>
+
+            <br><br>
+            <textarea rows= "5" cols" name="info" 
+            value="<%= typeof info != 'undefined'?info:'' %>"
+    
+            > </textarea>
+    </td>
+</tr>
+
+
+
+    </table>
+    <br><br>
+    <input class="btn btn--orange"type="submit" value="Submit" />
 
     </div>
+
+
     </form>
 </div>     
 </div>

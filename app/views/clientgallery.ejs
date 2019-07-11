@@ -1,112 +1,183 @@
 <html>
-    <head>
-            <meta name="viewport" content="width=device-width, initial-scale=1" />
-            <link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700' rel='stylesheet' type='text/css'>
-            <meta name="keywords" content="Kanika Dawalia, Sketching, Slice of life,asliceoflifetoday">
-            <link rel="stylesheet" href="styles/styles.css">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <meta
+      name="keywords"
+      content="Kanika Dawalia, Sketching, Slice of life,asliceoflifetoday"
+    />
+    <link rel="stylesheet" href="styles/styles.css" />
 
-        <title>Slice of life</title>
+    <title>Slice of life</title>
 
-        <style>
-        .gallery{
-    
-    max-width: 1200px;
-    margin: auto;
-    overflow: auto;
-}
+    <style>
+      .gallery {
+        max-width: 1200px;
+        margin: auto;
+        overflow: auto;
+      }
 
-.grid-box{
-    margin: 5px;
-    border: 1px solid $mainPurple;
-    float: left;
-    width: 390px;
-    height: 390px;
-    
-}
+      .grid-box {
+        margin: 5px;
+        border: 1px solid $mainPurple;
+        float: left;
+        width: 390px;
+        height: 390px;
+      }
 
-.gallery img{
-    width: 100%;
-    height: 100%;
-    box-shadow: 0px 0px 20px 7px #DA33FF; 
+      .gallery img {
+        width: 100%;
+        height: 100%;
+        box-shadow: 0px 0px 20px 7px #da33ff;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- ----------------------------Site Header ----------------------------------  -->
+    <% include partials/nav.ejs %>
 
-}
-        </style>
-    </head>
-    <body>
- <!-- ----------------------------Site Header ----------------------------------  -->
- <% include partials/nav.ejs %> 
+    <!-- --------------------------------Gallery---------------------------------------->
+    <div class="page-section">
+      <div class="gallery">
+        <div class="headline" style="top: 200px;">
+          <p style="padding: 50px;">Gallery</p>
+        </div>
 
- <!-- --------------------------------Gallery---------------------------------------->
-<div class="page-section">
- <div class="gallery">
-     <div class="headline" style="top: 200px;"> <p style= "padding: 50px;">Gallery</p></div>
-
-
-     <div class="grid-box">
-        <img id="myImg" onclick="myFunc(this)" src="images/clientgallery/rana.jpg" alt="Snow">
-      </div>
+        <div class="grid-box">
+          <img
+            id="myImg"
+            onclick="myFunc(this)"
+            src="images/clientgallery/rana.jpg"
+            alt="Snow"
+          />
+        </div>
         <!-- The Modal -->
         <div id="myModal" class="modal">
-          <span class="close" onclick="modal.style.display='none'">&times;</span>
-          <img class="modal-content" id="img01">
+          <span class="close" onclick="modal.style.display='none'"
+            >&times;</span
+          >
+          <img class="modal-content" id="img01" />
           <div id="caption"></div>
         </div>
         <div class="grid-box">
-            <img id="myImg" onclick="myFunc(this)" src="images/clientgallery/sankalp.jpg" alt="Snow">
+          <img
+            id="myImg"
+            onclick="myFunc(this)"
+            src="images/clientgallery/sankalp.jpg"
+            alt="Snow"
+          />
+        </div>
+        <!-- The Modal -->
+        <div id="myModal" class="modal">
+          <span class="close" onclick="modal.style.display='none'"
+            >&times;</span
+          >
+          <img class="modal-content" id="img01" />
+          <div id="caption"></div>
+        </div>
+        <div class="grid-box">
+          <img
+            id="myImg"
+            onclick="myFunc(this)"
+            src="images/clientgallery/srt.jpg"
+            alt="Snow"
+          />
+        </div>
+        <!-- The Modal -->
+        <div id="myModal" class="modal">
+          <span class="close" onclick="modal.style.display='none'"
+            >&times;</span
+          >
+          <img class="modal-content" id="img01" />
+          <div id="caption"></div>
+        </div>
+
+        <div class="page-section">
+          <button class="btn btn--orange" onclick="myFunction()">
+            See Reviews
+          </button>
+
+          <div id="myDIV">
+            <h1>Comments</h1>
+            <form>
+              <table>
+                <tr>
+                  <td>Profile pic</td>
+                  <td>name</td>
+
+                  <td>
+                    <textarea
+                      class="item"
+                      style="background-color:black;color:white;"
+                      rows="4"
+                      cols="100"
+                      placeholder="Add a new Comment"
+                    >
+                    </textarea>
+                  </td>
+                  <td>
+                    <button type="submit" class="btn btn--orange">
+                      Comment
+                    </button>
+                  </td>
+                </tr>
+              </table>
+            </form>
+            <table>
+              <%for(let i in users){%>
+              <tr style="width: 1000px" class="order-table--row">
+                <td><%= users[i].thumbnail %></td>
+                <td><%= users[i].username %></td>
+                <td><%= users[i].comment %></td>
+              </tr>
+              <%}%>
+            </table>
           </div>
-            <!-- The Modal -->
-            <div id="myModal" class="modal">
-              <span class="close" onclick="modal.style.display='none'">&times;</span>
-              <img class="modal-content" id="img01">
-              <div id="caption"></div>
-            </div>
-            <div class="grid-box">
-                <img id="myImg" onclick="myFunc(this)" src="images/clientgallery/srt.jpg" alt="Snow">
-              </div>
-                <!-- The Modal -->
-                <div id="myModal" class="modal">
-                  <span class="close" onclick="modal.style.display='none'">&times;</span>
-                  <img class="modal-content" id="img01">
-                  <div id="caption"></div>
-                </div>
-                  
+        </div>
+      </div>
+    </div>
 
-<a href="/auth/login" class="btn btn--orange" style="padding:20px;margin:50px;vertical-align: center;">Add reviews</a>
+    <!-- ---------------------------Footer section------------------------------- -->
+    <% include partials/footer.ejs %>
 
-</div>                                                                                
- </div>
-                
-<!-- ---------------------------Footer section------------------------------- -->
-<% include partials/footer.ejs %> 
+    <!-- <script src="scripts/App.js"></script>    -->
 
-            <!-- <script src="scripts/App.js"></script>    -->
-            
-            <script>
-                // Get the modal
-              var modal = document.getElementById("myModal");
-              
-              // Get the image and insert it inside the modal - use its "alt" text as a caption
-              var modalImg = document.getElementById("img01");
-              var captionText = document.getElementById("caption");
-              
-              function myFunc(el){
-                var ImgSrc=el.src;
-                var altText=el.alt;
-                modal.style.display = "block";
-                modalImg.src = ImgSrc;
-                captionText.innerHTML = altText;
-              }
-              
-              window.onclick=function(event)
-              { if(event.target==modal)
-                { modal.style.display="none";
-               } 
-              }
-              
-              var span = document.getElementsByClassName("close")[0];
-              
-                </script>
-              
-      
-    </body>
+    <script>
+      // Get the modal
+      var modal = document.getElementById("myModal");
+
+      // Get the image and insert it inside the modal - use its "alt" text as a caption
+      var modalImg = document.getElementById("img01");
+      var captionText = document.getElementById("caption");
+
+      function myFunc(el) {
+        var ImgSrc = el.src;
+        var altText = el.alt;
+        modal.style.display = "block";
+        modalImg.src = ImgSrc;
+        captionText.innerHTML = altText;
+      }
+
+      window.onclick = function(event) {
+        if (event.target == modal) {
+          modal.style.display = "none";
+        }
+      };
+
+      var span = document.getElementsByClassName("close")[0];
+
+      function myFunction() {
+        var x = document.getElementById("myDIV");
+        if (x.style.display === "block") {
+          x.style.display = "none";
+        } else {
+          x.style.display = "block";
+        }
+      }
+    </script>
+  </body>
 </html>

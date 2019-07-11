@@ -1,11 +1,10 @@
-
-body{
-    font-family: 'Roboto','sans-serif';
-    background-color: black;
-    color: white;
+body {
+  font-family: "Roboto", "sans-serif";
+  background-color: black;
+  color: white;
 }
 
-img{
-    max-width: 100%;
-    height: auto; 
+img {
+  max-width: 100%;
+  height: auto;
 }

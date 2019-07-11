@@ -1,36 +1,32 @@
-.about{
+.about {
+  text-align: center;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 
-text-align: center;
-font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-
-
-&__name{
+  &__name {
     font-size: 3rem;
-    font-weight:300;
-}
+    font-weight: 300;
+  }
 
-
-&__p{
+  &__p {
     font-size: 1rem;
 
-    @mixin atMedium{
-        font-size: 1.8rem;
-
+    @mixin atMedium {
+      font-size: 1.8rem;
     }
-}
+  }
 
-&__image{
-    margin-bottom : 30px; 
+  &__image {
+    margin-bottom: 30px;
     margin-top: 50px;
-    width: 200px; 
- box-shadow: 0px 0px 20px 7px $mainPurple; 
- 
- border-radius: 50%;
+    width: 200px;
+    box-shadow: 0px 0px 20px 7px $mainPurple;
 
- @mixin atMedium{
-    margin-bottom : 50px; 
-    margin-top: 0px;
-    width: 300px; 
- }
-}
+    border-radius: 50%;
+
+    @mixin atMedium {
+      margin-bottom: 50px;
+      margin-top: 0px;
+      width: 300px;
+    }
+  }
 }

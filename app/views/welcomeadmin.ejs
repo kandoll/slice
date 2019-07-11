@@ -1,64 +1,69 @@
 <html>
-    <head>
-            <meta name="viewport" content="width=device-width, initial-scale=1" />
-            <link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700' rel='stylesheet' type='text/css'>
-            <meta name="keywords" content="Kanika Dawalia, Sketching, Slice of life,asliceoflifetoday">
-         <link rel="stylesheet" href="styles/styles.css"> 
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <meta
+      name="keywords"
+      content="Kanika Dawalia, Sketching, Slice of life,asliceoflifetoday"
+    />
+    <link rel="stylesheet" href="styles/styles.css" />
 
-        <title>Welcome Admin</title>
-        <style>
-        table, th, td {
-  border: 1px solid black;
-}
-        </style>
-    </head>
-    <body>
+    <title>Welcome Admin</title>
+    <style>
+      table,
+      th,
+      td {
+        border: 1px solid black;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- ---------------------------------Site Header ----------------------------------  -->
+    <% include partials/nav.ejs %>
 
- <!-- ---------------------------------Site Header ----------------------------------  -->
- <% include partials/nav.ejs %> 
+    <!-- ----------------------------Welcome Admin--------------------------------------- -->
+    <div class="page-section" style="text-align: center">
+      <div class="wrapper">
+        <h1>Welcome Admin</h1>
+        <a href="/logout" class="btn btn--orange">Logout</a>
+        <h2>Order List</h2>
 
-<!-- ----------------------------Welcome Admin--------------------------------------- -->    
-<div class="page-section" style="text-align: center">
-<div class="wrapper">
-<h1>Welcome Admin</h1>
-<a href="/logout" class="btn btn--orange">Logout</a>
-<h2>Order List</h2>    
-
-<!-- Table -->
-<div class="order-table">
-<table class="order-table__style">
-    <tr>
-        <th>Name</th>
-         <th>Email</th>
-          <th>Phone</th>
-           <th>Sheet</th>
-             <th>Type</th>
+        <!-- Table -->
+        <div class="order-table">
+          <table class="order-table__style">
+            <tr>
+              <th>Name</th>
+              <th>Email</th>
+              <th>Phone</th>
+              <th>Sheet</th>
+              <th>Type</th>
               <th>Date</th>
               <th>Status</th>
             </tr>
-    <%for(let i in orders){%>
-        <tr class="order-table--row">
-            <td> <%= orders[i].name %></td>
-            <td> <%= orders[i].email %></td>
-            <td> <%= orders[i].phone %></td>
-            <td> <%= orders[i].sheet %></td>
-            <td> <%= orders[i].kind %></td>
-            <td> <%= orders[i].date %></td>
-            <td>Pending</td>
-        </tr>
-    <%}%>
-</table>
-</div>
-<!-- Table - END -->
-
+            <%for(let i in orders){%>
+            <tr class="order-table--row">
+              <td><%= orders[i].name %></td>
+              <td><%= orders[i].email %></td>
+              <td><%= orders[i].phone %></td>
+              <td><%= orders[i].sheet %></td>
+              <td><%= orders[i].kind %></td>
+              <td><%= orders[i].date %></td>
+              <td>Pending</td>
+            </tr>
+            <%}%>
+          </table>
+        </div>
+        <!-- Table - END -->
+      </div>
     </div>
-</div>
-<!-- ---------------------------Footer section------------------------------- -->
+    <!-- ---------------------------Footer section------------------------------- -->
 
-<% include partials/footer.ejs %> 
+    <% include partials/footer.ejs %>
 
-<script src="scripts/App.js"></script>               
-    </body>
+    <script src="scripts/App.js"></script>
+  </body>
 </html>
-
-        

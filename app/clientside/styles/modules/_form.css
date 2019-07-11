@@ -1,10 +1,9 @@
-.orderform{
-    color: oranges;
-    box-sizing: border-box;
-    padding: 90px;
-    margin: 20px;
-    text-align: center;
-    margin-left: auto;
-    margin-right: auto;
-
+.orderform {
+  color: oranges;
+  box-sizing: border-box;
+  padding: 90px;
+  margin: 20px;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
 }

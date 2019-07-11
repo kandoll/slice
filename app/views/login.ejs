@@ -1,51 +1,80 @@
-<!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8" />
-    <title>Login</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <meta
+      name="keywords"
+      content="Kanika Dawalia, Sketching, Slice of life,asliceoflifetoday"
+    />
+    <link rel="stylesheet" href="styles/styles.css" />
 
-    <style>
-      body {
-        font-family: arial;
-        margin: 0;
-      }
-      nav {
-        background: #ff5353;
-        padding: 20px 10px;
-      }
-      nav ul {
-        max-width: 960px;
-        margin: 0 auto;
-        padding: 0;
-      }
-      nav li {
-        list-style-type: none;
-        display: inline-block;
-        margin: 0 10px 0 0;
-      }
-      nav a {
-        color: #fff;
-        font-size: 18px;
-        background: rgba(255, 255, 255, 0.2);
-        text-decoration: none;
-        padding: 10px;
-        display: block;
-      }
-      main,
-      header {
-        max-width: 960px;
-        margin: 30px auto;
-        padding: 0 10px;
-        color: #333;
-      }
-      .google-btn {
-        color: #fff;
-        text-decoration: none;
-        font-size: 18px;
-        padding: 10px;
-        background: #ff5353;
-      }
-    </style>
+    <title>Slice of life</title>
+  </head>
+  <body>
+    <!-- ---------------------------------Site Header ----------------------------------  -->
+    <% include partials/nav.ejs %>
+
+    
+      
+    <!-- ----------------------------FAQ --------------------------------------- -->
+    <div class="page-section">
+      <div class="wrapper">
+        <div class="ordertable" style="border: solid 2px orange; height:70%; width:50%;margin:50px auto;padding-top:50px;">
+
+      <h1 style="text-align: center;">Login </h1>
+      <body>
+          <ul>
+              <li>
+                <a class="btn btn--orange"href="/auth/logout">Logout</a>
+              </li>
+              <br>
+              <li>
+                <a class="btn btn--orange" href="login">Login</a>
+              </li>
+              <br>
+              <li>
+                <a class="btn btn--orange" href="/home">Home</a>
+              </li>
+              <br>
+            </ul>
+            <main>
+                <a class="btn btn--orange" href="/auth/google">Google+</a>
+              </main>
+            
+      </body>
+    </div>
+  </div>
+    </div>
+    <!-- ---------------------------Footer section------------------------------- -->
+
+    <% include partials/footer.ejs %>
+
+    <script src="scripts/App.js"></script>
+  </body>
+</html>
+
+
+
+
+<!--<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <meta
+      name="keywords"
+      content="Kanika Dawalia, Sketching, Slice of life,asliceoflifetoday"
+    />
+    <link rel="stylesheet" href="styles/styles.css" />
+
+    <title>Gallery</title>
   </head>
   <body>
     <nav>
@@ -59,7 +88,7 @@
         </li>
 
         <li>
-          <a href="/">home</a>
+          <a href="/home">Home</a>
         </li>
       </ul>
     </nav>
@@ -70,3 +99,4 @@
     </header>
   </body>
 </html>
+-->

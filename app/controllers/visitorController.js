@@ -4,45 +4,92 @@ const passport = require("passport");
 const User = require("../model/User");
 var bodyParser = require("body-parser");
 var urlencodedParser = bodyParser.urlencoded({ extended: false });
+const authCheck=(req,res,next)=>{
+if(!req.user){
+//if user is not logged in
+res.redirect('/login');
+}else{
+  next();
+}
+};
 
 module.exports = function(app) {
   //-----------------------------------------HOME---------------------------------------------
-  app.get("/home", function(req, res) {
-    res.render("index.ejs");
+  app.get("/home", function(req,res) {
+    res.render("index.ejs",{user:req.user});
   });
   //---------------------------------GALLERY-----------------------------------------------
   app.get("/gallery", function(req, res) {
-    res.render("gallery.ejs");
+    res.render("gallery.ejs",{user:req.user});
   });
-  app.get("/modal", function(req, res) {
-    res.render("modal.ejs");
+
+  /*
+  app.get("/clientgallery",authCheck,function(req, res) {
+    res.render("clientgallery.ejs",{user:req.user});
   });
+
+  */
+
+  
+
+//--------------------------------------------------------------
+
   //get data from mongodb and pass it to view
-  app.get("/clientgallery", function(req, res) {
+  app.get("/clientgallery",authCheck,function(req, res) {
     User.find({}, (err, data) => {
       if (err) throw err;
-      res.render("clientgallery", { users: data });
+      res.render("clientgallery", { users: data,user:req.user});
     });
   });
 
+  //--------------------------delete comment----------------------------------------
+  app.delete('/clientgallery/:comment',function(req,res){
+
+    // delete the requested item from mongodb
+
+    User.find({item:req.params.item.replace(/\-/g," ")}).remove(function(err,data){
+        if(err) throw err;
+        res.json(data);
+    });
+});
+
+ //------------------------------------------------------------------------------
   //get data from view and add it to mongodb
   app.post("/clientgallery", urlencodedParser, function(req, res) {
-    var newUser = User(req.body).save(function(err, data) {
+    var newCom = User(req.body).save(function(err, data) {
       if (err) throw err;
       res.json(data);
     });
-  });
+  }); 
 
   //---------------------------------------FAQS-------------------------------------------
 
   app.get("/faqs", function(req, res) {
-    res.render("faqs.ejs");
+    res.render("faqs.ejs",{user:req.user});
+  });
+//---------------------Visiter Logout page-------------------------------------------------
+app.get("/auth/logout", function(req, res) {
+  req.logout();
+  res.redirect('/home');
+});
+  //----------------------Visiter Login page---------------------------------------------
+  
+  app.get("/login", function(req, res) {
+    res.render("login.ejs",{user:req.user});
   });
 
+  //------------------login with GOOGLE------------------------------------------
+  app.get("/auth/google",passport.authenticate('google',{
+    scope:['profile']
+  }));
+//-----------------------callback route for google to redirect to-----------------------------
+app.get("/auth/google/redirect",passport.authenticate('google'),(req,res)=>{
+res.redirect('/clientgallery/')
+});
   //----------------------------ORDER-------------------------------------------------
 
   app.get("/order", function(req, res) {
-    res.render("order.ejs");
+    res.render("order.ejs",{user:req.user});
   });
 
   
@@ -51,7 +98,7 @@ module.exports = function(app) {
   });
   //--------------------------------ORDER-PLACED-----------------------------------------------
   app.get("/order-placed", function(req, res) {
-    res.render("order-placed.ejs");
+    res.render("order-placed.ejs",{user:req.user});
   });
 
   //order handle

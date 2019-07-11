@@ -23,6 +23,13 @@
           <li><a href="/home#Videos-section">Videos</a></li>
           <li><a href="/home#Pricing-section">Pricing</a></li>
           <li><a href="/faqs">FAQ</a></li>
+
+          <% if(user) { %>
+            <li><a class="btn btn--orange"href="/auth/logout">Logout</a></li>
+
+          <% } else { %>
+            <li><a class="btn btn--orange"href="/login">Login</a></li>
+   <% } %>
         </ul>
       </nav>
     </div>

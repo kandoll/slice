@@ -43,8 +43,8 @@
     <!-- --------------------------------Gallery---------------------------------------->
     <div class="page-section">
       <div class="gallery">
-        <div class="headline" style="top: 200px;">
-          <p style="padding: 50px;">Gallery</p>
+        <div class="headline" style="top: 100px;">
+          <p style="padding: 10px;">Gallery</p>
         </div>
 
         <div class="grid-box">
@@ -97,7 +97,11 @@
         </div>
 
         <div class="page-section">
-          <button class="btn btn--orange" onclick="myFunction()">
+          <button
+            style="margin-top: 50px;"
+            class="btn btn--orange"
+            onclick="myFunction()"
+          >
             See Reviews
           </button>
 
@@ -106,8 +110,13 @@
             <form>
               <table>
                 <tr>
-                  <td>Profile pic</td>
-                  <td>name</td>
+                  <td>
+                    <img
+                      style="height:60px;width:60px;"
+                      src="<%= user.thumbnail %>"
+                    />
+                  </td>
+                  <td><%= user.username %></td>
 
                   <td>
                     <textarea
@@ -125,17 +134,25 @@
                     </button>
                   </td>
                 </tr>
+                <%for(let i in users){%>
+                <tr style="width: 1000px" class="order-table--row">
+                  <td>
+                    <img
+                      style="height:60px;width:60px;"
+                      src="<%= users[i].thumbnail %>"
+                    />
+                  </td>
+                  <td><%= users[i].username %></td>
+                  <td><%= users[i].comment %></td>
+                </tr>
+                <%}%>
+                
               </table>
             </form>
-            <table>
-              <%for(let i in users){%>
-              <tr style="width: 1000px" class="order-table--row">
-                <td><%= users[i].thumbnail %></td>
-                <td><%= users[i].username %></td>
-                <td><%= users[i].comment %></td>
-              </tr>
-              <%}%>
-            </table>
+            <% if(!user) { %>
+
+            <a href="/login" class="btn btn--orange">Add review </a>
+            <% } %>
           </div>
         </div>
       </div>
@@ -179,5 +196,44 @@
         }
       }
     </script>
+
+    <script>
+    $(document).ready(function(){
+
+$('form').on('submit', function(){
+
+    var comment = $('form input');
+    var user = {comment: comment.val()};
+
+    $.ajax({
+      type: 'POST',
+      url: '/clientgallery',
+      data: user,
+      success: function(data){
+        //do something with the data via front-end framework
+        location.reload();
+      }
+    });
+
+    return false;
+
+});
+
+$('li').on('click', function(){
+    var item = $(this).text().replace(/ /g, "-");
+    $.ajax({
+      type: 'DELETE',
+      url: '/todo/' + item,
+      success: function(data){
+        //do something with the data via front-end framework
+        location.reload();
+      }
+    });
+});
+
+});
+
+    </script>
+
   </body>
 </html>

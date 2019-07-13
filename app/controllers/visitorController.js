@@ -58,7 +58,7 @@ module.exports = function(app) {
   app.post("/clientgallery", urlencodedParser, function(req, res) {
     var newCom = User(req.body).save(function(err, data) {
       console.log(req.body);
-      if (err) throw err;node app.js
+      if (err) throw err;
       res.json(data);
     }); 
   }); 

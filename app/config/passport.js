@@ -6,6 +6,9 @@ const keys = require("./keys");
 const User = require("../model/User");
 //-----------------------------------------------------------------------
 module.exports = function(passport) {
+ 
+
+
   passport.use(
     new LocalStrategy(function(username, password, done) {
       Admin.findOne({ username: username }, function(err, user) {
@@ -32,13 +35,17 @@ module.exports = function(passport) {
 User.findById(id).then((user)=>{
   done(null,user);
 })
-  });
-/*
+  });  
+
+
+  /*
   passport.deserializeUser(function(id, done) {
     Admin.findById(id, function(err, user) {
       done(err, user);
     });
-  }); */
+  }); 
+*/
+ 
 
   passport.use(
     new GoogleStrategy(

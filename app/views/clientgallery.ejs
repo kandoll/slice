@@ -13,6 +13,11 @@
     <link rel="stylesheet" href="styles/styles.css" />
 
     <title>Slice of life</title>
+    <script 
+        src="https://code.jquery.com/jquery-1.12.4.js"
+        integrity="sha256-Qw82+bXyGq6MydymqBxNPYTaUXXq7c8v3CwiYwLLNXU="
+        crossorigin="anonymous">
+        </script>
 
     <style>
       .gallery {
@@ -116,9 +121,9 @@
                       src="<%= user.thumbnail %>"
                     />
                   </td>
-                  <td><%= user.username %></td>
+                  <td class="nam"><%= user.username %></td>
 
-                  <td>
+                  <td class="dp">
                     <textarea
                       class="item"
                       style="background-color:black;color:white;"
@@ -163,7 +168,7 @@
 
     <!-- <script src="scripts/App.js"></script>    -->
 
-    <script>
+    <!--<script>
       // Get the modal
       var modal = document.getElementById("myModal");
 
@@ -195,7 +200,7 @@
           x.style.display = "block";
         }
       }
-    </script>
+    </script> -->
 
     <script>
     $(document).ready(function(){
@@ -203,7 +208,9 @@
 $('form').on('submit', function(){
 
     var comment = $('form input');
-    var user = {comment: comment.val()};
+    var username=$(".nam");
+    var thumbnail=$(".dp");
+    var user = {username:username.val(),thumbnail:thumbnail.val(),comment:comment.val()};
 
     $.ajax({
       type: 'POST',

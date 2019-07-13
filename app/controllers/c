@@ -348,3 +348,18 @@ if(currentUser){
           <% } else { %>
             <li><a class="btn btn--orange"href="/login">Login</a></li>
    <% } %>
+
+   -----------------------------------------------
+    <%for(let i in users){%>
+                <tr style="width: 1000px" class="order-table--row">
+                  <td>
+                    <img
+                      style="height:60px;width:60px;"
+                      src="<%= users[i].thumbnail %>"
+                    />
+                  </td>
+                  <td><%= users[i].username %></td>
+                  <td><%= users[i].comment %></td>
+                </tr>
+                <%}%>
+                

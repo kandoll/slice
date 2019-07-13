@@ -57,9 +57,10 @@ module.exports = function(app) {
   //get data from view and add it to mongodb
   app.post("/clientgallery", urlencodedParser, function(req, res) {
     var newCom = User(req.body).save(function(err, data) {
-      if (err) throw err;
+      console.log(req.body);
+      if (err) throw err;node app.js
       res.json(data);
-    });
+    }); 
   }); 
 
   //---------------------------------------FAQS-------------------------------------------

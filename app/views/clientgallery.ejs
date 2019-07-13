@@ -112,19 +112,20 @@
 
           <div id="myDIV">
             <h1>Comments</h1>
-            <form>
+            <form id="comment-box">
               <table>
                 <tr>
                   <td>
-                    <img
+                    <img id="userimg"
                       style="height:60px;width:60px;"
                       src="<%= user.thumbnail %>" alt="NO image"
                     />
                   </td>
-                  <td class="nam"><%= user.username %></td>
+                  <td class="nam" id="username"><%= user.username %></td>
 
                   <td class="dp">
                     <textarea
+                    id="comment-area"
                       class="item"
                       style="background-color:black;color:white;"
                       rows="4"
@@ -134,7 +135,7 @@
                     </textarea>
                   </td>
                   <td>
-                    <button type="submit" class="btn btn--orange">
+                    <button type="button" onclick="saveComment();" id="comment-button" class="btn btn--orange">
                       Comment
                     </button>
                   </td>
@@ -203,14 +204,17 @@
     </script> -->
 
     <script>
-    $(document).ready(function(){
+    // $(document).ready(function(){
 
-$('form').on('submit', function(){
+function saveComment(){
+  // var comment = $('form input');
+  // var username=$(".nam");
+  // var thumbnail=$(".dp");
 
-    var comment = $('form input');
-    var username=$(".nam");
-    var thumbnail=$(".dp");
-    var user = {username:username.val(),thumbnail:thumbnail.val(),comment:comment.val()};
+  var comment = document.getElementById('comment-area').value
+  var username = document.getElementById('username').innerHTML
+  var thumbnail = document.getElementById('userimg').getAttribute('src')
+  var user = {username:username,thumbnail:thumbnail,comment:comment};
 
     $.ajax({
       type: 'POST',
@@ -222,9 +226,9 @@ $('form').on('submit', function(){
       }
     });
 
-    return false;
+    return;
 
-});
+};
 
 $('li').on('click', function(){
     var item = $(this).text().replace(/ /g, "-");
@@ -238,7 +242,7 @@ $('li').on('click', function(){
     });
 });
 
-});
+// });
 
     </script>
 

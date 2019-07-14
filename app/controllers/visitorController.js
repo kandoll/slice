@@ -4,14 +4,16 @@ const passport = require("passport");
 const User = require("../model/User");
 var bodyParser = require("body-parser");
 var urlencodedParser = bodyParser.urlencoded({ extended: false });
-const authCheck=(req,res,next)=>{
+
+
+/*const authCheck=(req,res,next)=>{
 if(!req.user){
 //if user is not logged in
 res.redirect('/login');
 }else{
   next();
 }
-};
+};  */
 
 module.exports = function(app) {
   //-----------------------------------------HOME---------------------------------------------
@@ -35,7 +37,7 @@ module.exports = function(app) {
 //--------------------------------------------------------------
 
   //get data from mongodb and pass it to view
-  app.get("/clientgallery",authCheck,function(req, res) {
+  app.get("/clientgallery",function(req, res) {
     User.find({}, (err, data) => {
       if (err) throw err;
       res.render("clientgallery", { users: data,user:req.user});
@@ -57,7 +59,7 @@ module.exports = function(app) {
   //get data from view and add it to mongodb
   app.post("/clientgallery", urlencodedParser, function(req, res) {
     var newCom = User(req.body).save(function(err, data) {
-      console.log(req.body);
+      console.log({users: data,user:req.user});
       if (err) throw err;
       res.json(data);
     }); 

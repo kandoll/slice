@@ -139,19 +139,23 @@
                     </button>
                   </td>
                 </tr>
+
                 <%for(let i in users){%>
+                  <% if(users[i].comment!=" ") { %>
+
                 <tr style="width: 1000px" class="order-table--row">
                   <td>
                     <img
                       style="height:60px;width:60px;"
-                      src="<%= users[i].thumbnail %>"
+                      src ="<%= users[i].thumbnail %>"
                     />
                   </td>
                   <td><%= users[i].username %></td>
                   <td><%= users[i].comment %></td>
                 </tr>
                 <%}%>
-                
+                <% } %>
+
               </table>
             </form>
             <% if(!user) { %>

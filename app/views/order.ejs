@@ -29,19 +29,19 @@
 
 
 <form class="orderform" method="POST">
-<div class="ordertable" style="border: solid 2px orange; height:90%; width:100%;padding-top:50px;">
+<div class="ordertable" style="border: solid 2px orange; height:100%; width:100%;padding-top:50px;">
         <% include ./partials/messages.ejs   %>
 
         <table style="margin: 0 auto;">
 
 <tr>
     <td>
-            <label>Name</label>           
+            <label for="name">Name :</label>           
 
     </td>
     <td>
             <input 
-            name="name"
+            name="name" id="name"
              placeholder="Name"
               required="" 
               type="text"
@@ -52,13 +52,13 @@
 </tr>
     <tr>
         <td>
-                <label>Email</label>
+                <label for="email">Email :</label>
 
         </td>
         <td>
                 <input name="email"
                 placeholder="Email" 
-                required="" type="email" 
+                required="" type="email" id="email"
                 value="<%= typeof email != 'undefined'?email:'' %>"
                 />
         </td>
@@ -67,10 +67,10 @@
 
    
     <tr>
-        <td>    <label>Phone No.</label>
+        <td>    <label for="phone">Phone Number :</label>
         </td>
         <td>
-                <input name="phone"
+                <input name="phone" id="phone"
                 placeholder="Phone No."
                  required="" type="text"
                  value="<%= typeof phone != 'undefined'?phone:'' %>"
@@ -80,55 +80,57 @@
     </tr>
                 
       <tr>
-          <td>    <label>Enter Your Sheet Size</label>
+          <td>    <label for="sheetsize">Select Your Sheet Size :</label>
           </td>
           <td>
-                <input name="sheet"
+                <!-- <input name="sheet"
                 placeholder="A1/A2/A3/A4."
                  required="" type="text"
                  value="<%= typeof sheet != 'undefined'?sheet:'' %>"
-                 />
+                 /> -->
 
                  
 
-    <!--
-    <select id="sheet" value="<%= typeof sheet != 'undefined'?sheet:'' %>"
+    
+    <select name="sheet" id="sheetsize" value="<%= typeof sheet != 'undefined'?sheet:'' %>"
             >
-        <option name="A2">A2</option>
-        <option name="A3">A3</option>
-        <option name="A4">A4</option> 
+            <option value="A1">A1</option>
+
+        <option value="A2">A2</option>
+        <option value="A3">A3</option>
+        <option value="A4">A4</option> 
         
-    </select>  -->
+    </select> 
           </td>
       </tr>          
     
 <tr>
     <td>
-            <label>Select Your Sketch Type</label>
+            <label for="kind">Select Your Sketch Type :</label>
 
     </td>
     <td>
-            <input name="kind"
+            <!-- <input name="kind"
             placeholder="Colored/BNW"
              required="" type="text"
              value="<%= typeof kind != 'undefined'?kind:'' %>"
-             />
-          <!-- <select id="kind" value="<%= typeof kind != 'undefined'?kind:'' %>"
+             /> -->
+          <select name="kind" id="kind" value="<%= typeof kind != 'undefined'?kind:'' %>"
                >
-              <option name="Colored Sketch">Colored Sketch</option>
-              <option name="Black &amp; White">Black &amp; White</option>
-              <option name="Pen Sketch">Pen Sketch</option>
-               </select> -->
+              <option value="Colored Sketch">Colored Sketch</option>
+              <option value="Black &amp; White">Black &amp; White</option>
+              <option value="Pen Sketch">Pen Sketch</option>
+               </select>
     </td>
 </tr>
    
 <tr>
     <td>
-            <label>Delivery date</label>
+            <label for="date">Select a Delivery date :</label>
 
     </td>
     <td>
-            <input name="date" required="" type="date" 
+            <input name="date" id="date" required="" type="date" 
             value="<%= typeof date != 'undefined'?date:'' %>"
             />
             
@@ -136,15 +138,21 @@
 </tr>
         
 <tr>
-    <td>    <label>Description</label>
+    <td>    <label for="info">Description :</label>
     </td>
     <td>
 
             <br><br>
-            <textarea rows= "5" cols" name="info" 
+            <textarea rows= "5" cols="50" name="info" id="info" placeholder="I want a Colored Sketch of..."
             value="<%= typeof info != 'undefined'?info:'' %>"
     
             > </textarea>
+    </td>
+    
+</tr>
+<tr>
+    <td>
+        <label for="ref">Upload reference image :</label>
     </td>
 </tr>
 
@@ -155,8 +163,6 @@
     <input class="btn btn--orange"type="submit" value="Submit" />
 
     </div>
-
-
     </form>
 </div>     
 </div>
